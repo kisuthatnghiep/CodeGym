@@ -22,7 +22,7 @@
         </tr>
         <tr th:each="b,no: ${blogs}" th:object="${b}">
             <td th:text="${no.count}"></td>
-            <td th:text="*{name}"></td>
+            <td><a th:href="@{|/blog/detail/*{id}|}" th:text="*{name}"></a></td>
             <td th:text="*{date}"></td>
             <td><a class="btn btn-warning" th:href="@{|/blog/save/*{id}|}">Update</a></td>
             <td><a class="btn btn-danger" th:href="@{|/blog/delete/*{id}|}">Delete</a></td>
