@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h2>Oxford Dictionary</h2>
+<input type="text" id="english">
+<input type="button" value="Translate" onclick="Translate()">
+<p id="nghia"></p>
+<script>
+    let tiengAnh=['dog','cat','bird','pig','chicken','human','warrior','hunter','mage','dragon']
+    let tiengViet=['chó','mèo','chim','lợn','gà','người','chiến binh','thợ săn','pháp sư','rồng']
+    let result=[];
+    function Translate() {
+        for(let i=0;i<tiengAnh.length;i++){
+            if (document.getElementById('english').value === tiengAnh[i]) {
+                result=tiengViet[i]
+                document.getElementById('nghia').innerHTML = result
+            }
+        }
+    }
+</script>
+</body>
+</html>

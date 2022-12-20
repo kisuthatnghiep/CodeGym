@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let myDate=function(ngay,thang,nam){
+        this.day=ngay;
+        this.month=thang;
+        this.year=nam;
+        this.date=ngay+'/'+thang+'/'+nam;
+    this.getDay= function (){
+        return this.day
+    };
+    this.getMonth =function (){
+        return this.month
+    } ;
+    this.getYear=function (){
+        return this.year
+    };
+    this.getDate=function (){
+        return this.date
+    }
+    this.setDay=function (ngay){
+        this.day= ngay
+    };
+    this.setMonth=function (thang){
+        this.month= thang
+    };
+    this.setYear=function (nam){
+        this.year=nam
+    };
+    this.setDate=function (day,month,year){
+        this.date=day+'/'+month+'/'+year;
+    }
+    };
+    let date= new myDate(2,2,2017);
+    date.setDay(3);
+    date.setMonth(3);
+    date.setYear(2022);
+    date.setDate(5,5,556);
+    let day=date.getDay();
+    let month=date.getMonth();
+    let year=date.getYear();
+    let date1=date.getDate();
+    // alert(day+'/'+month+'/'+year)
+    alert(date1)
+    date1.toString()
+</script>
+</body>
+</html>

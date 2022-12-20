@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let  arr1=[1,2,-3,4,5,523,235,2,23,3423,45]
+  let  arr2=[12,123,12123,1231.2421,4124,124,1,2423,456657,568,-231,12313,-2132]
+  let arr3=[0,0,0,0,0,0,0]
+  let arr4=[]
+    let result=timMin(arr1)
+    alert('Giá trị nhỏ nhất của mảng là '+result)
+  function timMin(arr){
+    var min=arr[0]
+    for(let i=1;i<arr.length;i++){
+      if(arr[i]<min){
+        min=arr[i]
+      }
+    }
+    return min
+  }
+</script>
+</body>
+</html>

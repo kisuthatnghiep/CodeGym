@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let Temperature=function (doC){
+      this.changeToF=function (){
+        return 9/5*doC+32
+      }
+      this.changeToK=function (){
+        return doC+273
+      }
+  }
+  let temperature=new Temperature(25)
+  document.write('Độ F = '+temperature.changeToF()+'<br>')
+  document.write('Độ K = '+temperature.changeToK())
+</script>
+</body>
+</html>

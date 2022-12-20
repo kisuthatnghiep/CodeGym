@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // A=+prompt('Nhập số cần kiểm tra: ')
+  // checkSNT(A)
+  let text=''
+  for(let j=2;j<10000;j++){
+    var b=checkSNT(j)
+    if(b===1){
+      text+=j+' '
+    }
+  }
+  document.write('Các số nguyên tố nhỏ hơn 10000 là '+text)
+  function checkSNT(a){
+    let flag=true
+    let Can_a=Math.sqrt(a)
+ for(let i=2;i<=Can_a;i++){
+   if(a%i===0){
+     flag=false
+     break;
+   }
+ }
+ if(flag){
+   // alert(a+' là số nguyên tố')
+   return 1
+ }else{
+   // alert(a+' không là số nguyên tố')
+   return 0
+ }
+  }
+</script>
+</body>
+</html>

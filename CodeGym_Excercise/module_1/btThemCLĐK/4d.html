@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="tk"></p>
+<script>
+    nam=+prompt('Nhập vào năm bất kỳ: ');
+    if(nam%100==0) {
+        TK = nam/ 100
+    }else{
+        TK = (nam - nam % 100) / 100+1
+    }
+    document.getElementById('tk').innerHTML='Năm '+nam+' thuộc thế kỉ '+TK
+</script>
+</body>
+</html>

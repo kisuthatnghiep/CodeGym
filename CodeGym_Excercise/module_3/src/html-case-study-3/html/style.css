@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+.ms-n5 {
+    margin-left: -40px;
+}
+a{
+    text-decoration: none;
+}
+#avatar{
+    margin-left: 80px;
+    color:black;
+    font-weight: 700;
+}
+.subnav{
+    display:none;
+}
+li{
+    list-style: none;
+}
+#header{
+    background-color: rgb(235, 235, 235);;
+}
+.vertical{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.signIn:hover a{
+    color:white;
+}

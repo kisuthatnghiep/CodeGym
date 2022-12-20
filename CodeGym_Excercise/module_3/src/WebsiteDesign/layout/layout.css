@@ -1,0 +1,42 @@
+header{
+    height: 30px;
+
+}
+nav{
+    height: 30px;
+
+}
+section{
+    width: 98%;
+    height: 90px;
+}
+#content{
+    display: flex;
+    border: none;
+}
+article{
+    width: 98%;
+    height: 90px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+#left {
+    width: 70%;
+    border: none;
+}
+aside{
+    width: 30%;
+    height: 187px;
+    margin: 0;
+}
+footer{
+    height: 50px;
+}
+*{
+    border: 1px solid ;
+    margin: 0;
+}
+header, nav, aside, footer, section{
+    margin: 5px 5px 5px 5px;
+}

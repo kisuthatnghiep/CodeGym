@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>survey</title>
+    <style>
+        td{text-align: center}
+        tr:nth-child(odd) {
+            background-color: #D6EEEE;
+        }
+        table{
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        .duongke{border: 1px solid}
+    </style>
+</head>
+<body>
+<h2>Market Research survey</h2>
+<p>please take a few moments to complete this satisfaction survey.</p>
+<hr style="border:1px dotted">
+<form>
+    <h4>what is your age range?</h4>
+    <select name="agerange" style="width: 400px">
+        <option value="18-24">18-24</option>
+        <option value="25-34">25-34</option>
+        <option value="35-50">35-50</option>
+        <option value="50+">50+</option>
+    </select>
+        <h4>what is your yearly income range?</h4>
+        <select name="yearlyincome" style="width: 400px">
+            <option value="$0-$25,000">$0-$25,000</option>
+            <option value="$25,000-$50,000">$25,000-$50,000</option>
+            <option value="$50,000-$100,000">$50,000-$100,000</option>
+            <option value="$100,000+">$100,000+</option>
+        </select>
+    <h4>Gender</h4>
+    <input type="radio" name="gender">Male<br>
+    <input type="radio" name="gender">Female<br>
+    <h4>Which of the following products have you purchased in the last 2 months. Please check all the apply.</h4>
+    <input type="checkbox" name="purchased">Product 1<br>
+    <input type="checkbox" name="purchased">Product 2<br>
+    <input type="checkbox" name="purchased">Product 3
+    <h4>How often would you use our new product?</h4>
+    <input type="radio" name="howoften">Daily<br>
+    <input type="radio" name="howoften">Weekly<br>
+    <input type="radio" name="howoften">Monthly<br>
+    <h4>What would you pay for the new product</h4>
+    <h4>$ <input type="number" name="dollars" style="width: 100px">.<input type="number" name="cents" style="width: 20px"></h4>
+<pre>  Dollars        Cents</pre>
+    <h4>what features would you like to see in the new product.</h4>
+    <textarea cols="120" rows="10"></textarea>
+
+    <p>Please rate your level of agreement with the following statements.</p><br>
+    <table style="width: 900px">
+        <tr class="duongke">
+            <td class="duongke"></td>
+          <td class="duongke">Strongly disagree</td>
+            <td class="duongke">Disagree</td>
+            <td class="duongke">Agree</td>
+            <td class="duongke">Strongly sagree</td>
+        </tr>
+        <tr>
+            <th class="duongke">Our products are priced fairly.</th>
+            <td class="duongke"><input type="radio" name="vote1"><br>1</td>
+            <td class="duongke"><input type="radio" name="vote1"><br>2</td>
+            <td class="duongke"><input type="radio" name="vote1"><br>3</td>
+            <td class="duongke"><input type="radio" name="vote1"><br>4</td>
+        </tr>
+        <tr class="duongke">
+            <th class="duongke">Our products are high quality.</th>
+            <td class="duongke"><input type="radio" name="vote2"><br>1</td>
+            <td class="duongke"><input type="radio" name="vote2"><br>2</td>
+            <td class="duongke"><input type="radio" name="vote2"><br>3</td>
+            <td class="duongke"><input type="radio" name="vote2"><br>4</td>
+        </tr>
+        <tr class="duongke">
+            <th class="duongke">You would recommend our product to a friend or coworker.</th>
+            <td class="duongke"><input type="radio" name="vote3"><br>1</td>
+            <td class="duongke"><input type="radio" name="vote3"><br>2</td>
+            <td class="duongke"><input type="radio" name="vote3"><br>3</td>
+            <td class="duongke"><input type="radio" name="vote3"><br>4</td>
+        </tr>
+    </table>
+    <br>
+    <input type="submit" value="Submit" style="width: 100px">
+
+
+
+
+</form>
+</body>
+</html>

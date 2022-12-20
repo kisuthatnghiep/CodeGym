@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let img1='<table><tr><td>'
+  let img2='<tr><td>'
+  let img3='<tr><td>'
+  let img4='<tr><td>'
+  //hình 1
+for(n=1;n<=5;n++){
+  img1+='<h2><strong>'
+  for(m=1;m<=n;m++){
+    img1+='✱'
+  }
+  img1+='</strong></h2>'
+}
+img1+='</td></tr>'
+// document.write(img1)
+// hình 2
+  for(a=1;a<=5;a++){
+      img2+='<h2><strong>'
+      for(b=5;b>=a;b--){
+          img2+='✱'
+      }
+      img2+='</strong></h2>'
+  }
+  img2+='</td></tr>'
+  // document.write(img2)
+  //hình 3
+  for(c=1;c<=5;c++){
+      img3+='<h2 style="text-align: right"><strong>'
+      for(d=1;d<=c;d++){
+          img3+='✱'
+      }
+      img3+='</strong></h2>'
+  }
+  img3+='</td></tr>'
+  // document.write(img3)
+  // hình 4
+  for(e=1;e<=5;e++){
+      img4+='<h2 style="text-align: right"><strong>'
+      for(f=5;f>=e;f--){
+          img4+='✱'
+      }
+      img4+='</strong></h2>'
+  }
+  img4+='</td></tr></table>'
+  document.write(img1+'<tr><td></td></tr>'+img2+'<tr><td></td></tr>'+img3+'<tr><td></td></tr>'+img4)
+</script>
+</body>
+</html>

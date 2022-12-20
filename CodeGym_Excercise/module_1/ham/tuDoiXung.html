@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let word=prompt('Input word need to check: ')
+  alert(isPalindrome())
+  function isPalindrome(){
+    let last=word.length-1
+    for(let first=0;first<last;first++){
+      if(word[first]!==word[last]){
+        return 'không phải chuỗi palindrome'
+      }
+      last--
+    }
+    return 'chuỗi palindrome'
+  }
+</script>
+</body>
+</html>

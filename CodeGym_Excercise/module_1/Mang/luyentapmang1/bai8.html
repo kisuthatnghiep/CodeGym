@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mangSoNguyen=prompt('Nhập vào một mảng số nguyên 10 phần tử: ');
+    let arr=mangSoNguyen.split(',')
+  arr.sort(function (a,b){
+          return b-a
+  })
+  document.write(arr.join(','))
+</script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themify-icons/themify-icons.css">
+</head>
+<body>
+<div id="main">
+  <div id="header">
+<div style="float: left"><img style="height: 46px" src="logo.png"></div>
+      <div style="float: right;margin-right: 50px;height: 46px;line-height: 46px">
+          <input id="search_btn" type="button" value="Search"></div>
+      <div style="float: right;height: 46px;width: 60px;line-height: 46px;margin-right: 125px;">
+          <input type="text" placeholder=" Input here" style="border-radius: 8px;height: 20px;"></div>
+      <ul id="nav">
+          <li><a href="">New & Featured</a></li>
+          <li><a href="">Men</a>
+              <ul class="subnav">
+                  <li><a href="#shoes_padding">Shoes</a></li>
+                  <li><a href="#clothing_padding">Clothing</a></li>
+                  <li><a href="#collection_padding">Collection</a></li>
+              </ul>
+          </li>
+          <li><a href="">Women</a>
+              <ul class="subnav">
+                  <li><a href="">Shoes</a></li>
+                  <li><a href="">Clothing</a></li>
+                  <li><a href="">Collection</a></li>
+              </ul></li>
+          <li><a href="">Kids</a>
+              <ul class="subnav">
+                  <li><a href="">Shoes</a></li>
+                  <li><a href="">Clothing</a></li>
+                  <li><a href="">Collection</a></li>
+              </ul></li>
+          <li>
+              <a href="">Sale</a>
+              <ul class="subnav">
+                  <li><a href="">Shoes</a></li>
+                  <li><a href="">Clothing</a></li>
+                  <li><a href="">Equipment</a></li>
+              </ul>
+          </li>
+      </ul>
+  </div>
+  <div id="slider">
+
+  </div>
+  <div id="content">
+<!--      introduction-->
+<div class="introduction">
+    <h2 class="heading-section" >Introduction</h2>
+    <p id="intro_nike">Nike, Inc., formerly (1964–78) Blue Ribbon Sports, American
+        sportswear company headquartered in Beaverton,
+        Oregon. It was founded in 1964 as Blue Ribbon
+        Sports by Bill Bowerman, a track-and-field
+        coach at the University of Oregon, and his
+        former student Phil Knight. They opened their
+        first retail outlet in 1966 and launched the
+        Nike brand shoe in 1972. The company was renamed
+        Nike, Inc., in 1978 and went public two years
+        later. By the early 21st century, Nike had
+        retail outlets and distributors in more than
+        170 countries, and its logo—a curved check
+        mark called the “swoosh”—was recognized
+        throughout the world.</p>
+    <div class="image_intro_list">
+    <div  class="intro_image">
+        <img style="width: 300px;height: 300px;padding-left: 30px" src="intro1.webp">
+    </div>
+    <div class="intro_image">
+        <img style="width: 300px;height: 300px;padding-left: 50px" src="intro2.webp">
+    </div>
+        <div class="clear"></div>
+</div>
+
+      </div>
+<!--Shoes-->
+      <div class="background_shoes">
+          <div class="introduction">
+              <h2 class="heading-section text_white" >Shoes</h2>
+          </div>
+          <div id="add_product_shoes">
+              <ul>
+                  <li onclick="showModaladd(shoes,'shoes/shoes-add.webp')"><a href="#!">Add Shoes Product</a></li>
+              </ul>
+          </div>
+          <div id="shoes_padding">
+          <div id="table_list">
+              <p><b>Men's Shoes & Sneakers</b></p>
+              <ul>
+                  <li><a href="#!">Lifestyle</a></li>
+                  <li><a href="#!">Jordan</a></li>
+                  <li><a href="#!">Running</a></li>
+                  <li><a href="#!">Basketball</a></li>
+                  <li><a href="#!">Football</a></li>
+                  <li><a href="#!">Soccer</a></li>
+                  <li><a href="#!">Training & Gym</a></li>
+                  <li><a href="#!">Skateboarding</a></li>
+                  <li><a href="#!">Baseball</a></li>
+                  <li><a href="#!">Golf</a></li>
+                  <li><a href="#!">Tennis</a></li>
+                  <li><a href="#!">Walking</a></li>
+                  <li><a href="#!">Track & Field</a></li>
+                  <li><a href="#!">Volleyball</a></li>
+              </ul>
+          </div>
+<!--              Shoes Product-->
+              <div id="shoesProduct">
+
+              </div>
+        </div>
+
+          </div>
+<!--      Clothing-->
+      <div class="introduction">
+          <h2 class="heading-section" >Clothing</h2>
+      </div>
+      <div id="add_product_clothing">
+          <ul>
+              <li onclick="showModaladd(clothing,'clothing/clothing-add.webp')"><a href="#!">Add Clothing Product</a></li>
+          </ul>
+      </div>
+      <div id="clothing_padding">
+          <div id="table_list2">
+              <p><b>Men's Clothing</b></p>
+              <ul>
+                  <li><a href="#!">Hoodies & Pullovers</a></li>
+                  <li><a href="#!">Pants & Tights</a></li>
+                  <li><a href="#!">Jackets & Vests</a></li>
+                  <li><a href="#!">Top & T-Shirts</a></li>
+                  <li><a href="#!">Short</a></li>
+                  <li><a href="#!">Compression & Baselayer</a></li>
+                  <li><a href="#!">Tracksuits</a></li>
+                  <li><a href="#!">Socks</a></li>
+                  <li><a href="#!">Swimwear</a></li>
+                  <li><a href="#!">Golf</a></li>
+                  <li><a href="#!">Tennis</a></li>
+                  <li><a href="#!">Walking</a></li>
+                  <li><a href="#!">Track & Field</a></li>
+                  <li><a href="#!">Volleyball</a></li>
+              </ul>
+          </div>
+<!--          clothing product-->
+          <div id="clothingProduct">
+
+          </div>
+      </div>
+<!--collection-->
+    <div class="background_shoes">
+      <div class="introduction">
+          <h2 class="heading-section text_white" >Collection</h2>
+      </div>
+        <div id="add_product_collection">
+            <ul>
+                <li onclick="showModaladd(collection,'collection/collection-add.webp')"><a href="#!">Add Collection Product</a></li>
+            </ul>
+        </div>
+        <div id="collection_padding">
+            <div id="table_list3">
+                <p><b>ACG Accessories & Equipment</b></p>
+                <ul>
+                    <li><a href="#!">Lifestyle</a></li>
+                    <li><a href="#!">Jordan</a></li>
+                    <li><a href="#!">Running</a></li>
+                    <li><a href="#!">Basketball</a></li>
+                    <li><a href="#!">Football</a></li>
+                    <li><a href="#!">Soccer</a></li>
+                    <li><a href="#!">Training & Gym</a></li>
+                    <li><a href="#!">Skateboarding</a></li>
+                    <li><a href="#!">Baseball</a></li>
+                    <li><a href="#!">Golf</a></li>
+                    <li><a href="#!">Tennis</a></li>
+                    <li><a href="#!">Walking</a></li>
+                    <li><a href="#!">Track & Field</a></li>
+                    <li><a href="#!">Volleyball</a></li>
+                </ul>
+            </div>
+            <!--          collection product-->
+            <div id="collectionProduct">
+
+            </div>
+        </div>
+</div>
+</div>
+  <div id="footer">
+      <div style="padding-top: 30px">
+          <div style="width: 736px;margin-left: 30px;display: inline-block;font-size: 12px">
+              <div style="width: 230px;display: inline-block">
+                  <ul style="line-height:3 ">
+                      <li><a href="#!"><b>GIFT CARDS</b></a></li>
+                      <li><a href="#!"><b>PROMOTIONS</b></a></li>
+                      <li><a href="#!"><b>FIND A STORE</b></a></li>
+                      <li><a href="#!"><b>SIGN UP FOR EMAIL</b></a></li>
+                      <li><a href="#!"><b>BECOME A MEMBER</b></a></li>
+                      <li><a href="#!"><b>NIKE JOURNAL</b></a></li>
+                      <li><a href="#!"><b>SEND US FEEDBACK</b></a></li>
+                  </ul>
+              </div>
+              <div style="width: 230px;height: 252px;display: inline-block">
+                  <ul style="line-height:3 ">
+                      <li><a href="#!"><b>GET HELP</b></a></li>
+                      <li><a href="#!">Order Status</a></li>
+                      <li><a href="#!">Shipping And Delivery</a></li>
+                      <li><a href="#!">Returns</a></li>
+                      <li><a href="#!">Payment Options</a></li>
+                      <li><a href="#!">Gift Card Balance</a></li>
+                      <li><a href="#!">Contact Us</a></li>
+                  </ul>
+              </div>
+              <div style="width: 230px;display: inline-block">
+                  <ul style="line-height:3 ">
+                      <li><a href="#!"><b>ABOUT NIKE</b></a></li>
+                      <li><a href="#!">News</a></li>
+                      <li><a href="#!">Careers</a></li>
+                      <li><a href="#!">Investors</a></li>
+                      <li><a href="#!">Purpose</a></li>
+                      <li><a href="#!">Sustainability</a></li>
+                      <li><a href="#!">Social Network</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div id="icon-socical-network" style="display: inline-block;float: right;width: 150px">
+          <a style="font-size: 25px" href="https://www.youtube.com/c/nike" target="_blank"><i class="ti-youtube icon"></i></a>
+          <a style="font-size: 25px" href="https://www.facebook.com/nike/" target="_blank"><i class="ti-facebook icon"></i></a>
+          <a style="font-size: 25px" href="https://twitter.com/Nike" target="_blank"><i class="ti-twitter icon"></i></a>
+          <a style="font-size: 25px" href="https://www.instagram.com/nike/" target="_blank"><i class="ti-instagram icon"></i></a>
+      </div>
+          <div style="padding-top: 30px;display: inline-block">
+              <span style="margin-left: 5px"><i class="ti-location-pin"></i></span>
+              <span style="font-size: 10px;"><b>United States</b></span>
+              <span style="font-size: 10px;margin-left: 20px">© 2022 Nike, Inc. All Rights Reserved</span>
+              <span style="font-size: 10px; margin-left: 780px"><a href="#!">Guide</a></span>
+              <span style="font-size: 10px; margin-left: 10px"><a href="#!">Terms of Sale</a></span>
+              <span style="font-size: 10px; margin-left: 10px"><a href="#!">Terms of Use</a></span>
+              <span style="font-size: 10px; margin-left: 10px"><a href="#!">Nike Privacy Policy</a></span>
+
+          </div>
+
+      </div>
+
+    </div>
+    </div>
+<div class="modal">
+    <div class="modal-container">
+        <div class="modal-close js-modal-close">
+            <i class="ti-close"></i>
+        </div>
+        <header class="modal-header">
+            <i style="margin-right: 15px" class="ti-shopping-cart"></i>
+            Edit
+        </header>
+        <div class="modal-body">
+            <label for="nameItem" class="modal-label">
+                <i class="ti-gift"></i>
+                Name Item
+            </label>
+            <input type="text" id="nameItem" placeholder="What Item?" class="modal-input">
+
+            <label for="priceItem" class="modal-label">
+                <i class="ti-money"></i>
+                Price Item
+            </label>
+            <input type="text" id="priceItem" placeholder="Price?" class="modal-input">
+            <button id="fix" onclick="edit(a,b)">Apply<i class="ti-check"></i></button>
+
+        </div>
+    </div>
+</div>
+
+<!--modal-add-->
+
+<div class="modal-add">
+    <div class="modal-container-add">
+        <div class="modal-close-add js-modal-close-add">
+            <i class="ti-close"></i>
+        </div>
+        <header class="modal-header-add">
+            <i style="margin-right: 15px" class="ti-shopping-cart"></i>
+            ADD
+        </header>
+        <div class="modal-body-add">
+            <label for="nameItem2" class="modal-label-add">
+                <i class="ti-gift"></i>
+                Name Item
+            </label>
+            <input type="text" id="nameItem2" placeholder="What Item?" class="modal-input-add">
+
+            <label for="priceItem2" class="modal-label-add">
+                <i class="ti-money"></i>
+                Price Item
+            </label>
+            <input type="text" id="priceItem2" placeholder="Price?" class="modal-input-add">
+            <button id="fix-add" onclick="add(x,y)" >Apply<i class="ti-check"></i></button>
+
+        </div>
+    </div>
+</div>
+<!--login-->
+
+<div class="modal-login">
+    <div class="modal-container-login">
+<!--        <div class="modal-close-login js-modal-close-login">-->
+<!--            <i class="ti-close"></i>-->
+<!--        </div>-->
+        <header class="modal-header-login">
+            <i style="margin-right: 15px;font-size: 23px" class="ti-lock"></i>
+            LOGIN
+        </header>
+        <div class="modal-body-login">
+            <label for="username" class="modal-label-login">
+                <i class="ti-user"></i>
+                User Name
+            </label>
+            <input type="text" id="username" placeholder="Input username" class="modal-input-login">
+
+            <label for="password" class="modal-label-login">
+                <i class="ti-key"></i>
+                Password
+            </label>
+            <input type="password" id="password" placeholder="Input password" class="modal-input-login">
+            <button id="fix-login" onclick="checkLogin()" >GO</button>
+
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

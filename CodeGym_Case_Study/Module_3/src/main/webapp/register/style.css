@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.ms-n5 {
+    margin-left: -40px;
+}
+#avatar{
+    margin-left: 80px;
+    color:black;
+    font-weight: 700;
+}
+#header{
+    background-color: rgb(235, 235, 235);;
+}
+.vertical{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+#nav{
+    float: left;
+}
+#nav li{
+    display: inline-block;
+    position: relative;
+}
+#nav .subnav{
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+#nav .subnav a{
+    color: #000000;
+}
+#nav>li>a{
+    color: #FFF;
+}
+#nav li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 46px;
+    padding-left:24px;
+    display: inline-block;
+}
+#nav >li:hover> a {
+    background-color: gainsboro;
+    color: black;
+}
+.subnav li a{
+    width: 130px;
+}
+ul.subnav{
+    padding: 0;
+}
+.subnav li:hover a{
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+#footer{
+    background-color: #858d90;
+}
+#content{
+    height: 800px;
+}
+.center{
+    padding: 20px;
+
+}
+.center ul{
+    padding: 0;
+}
+.center a{
+    color: #FFFFFF;
+}
+.logo{
+    width: 120px;
+    display: inline-block;
+}
+.sizetext{
+    font-size: small;
+    padding-left: 300px;
+    color: #FFFFFF;
+}
+.sizetext a{
+    color: #FFFFFF;
+}
+#slider{
+    padding-top: 20px;
+    position: relative;
+}
+
+#messageWarningPassword {
+    display:none;
+    position: relative;
+}

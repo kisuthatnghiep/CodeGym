@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    table{
+        border-collapse: collapse;
+        height: 300px;
+        width: 400px;
+    }
+  tr:nth-child(even) {background-color: #f2f2f2;}
+  .nutNhan{
+    background-color: forestgreen;
+    height: 27px;
+    width: 50px;
+    border: #e0e0e0;
+    border-radius: 3px ;
+    color: white;
+    font-size: 10px;
+  }
+</style>
+<body onload="display()">
+<h4>Add New Product</h4>
+<div style="background-color: #f2f2f2;width: 300px;height: 80px;text-align: center">
+  <input id="newProduct" placeholder="New product" oninput="display()" style="width: 200px;margin-top: 25px;height: 20px" name="newProduct" type="text">
+    <button class="nutNhan" type="button" value="Add" onclick="add()">Add</button>
+</div>
+<h4>Display All Product</h4>
+<p id="table"></p>
+<script>
+    let smartPhone=['Sony Xperia','Samsung Galaxy','Nokia 6','Xiaomi Redmi Note 4','Apple iphone 6S','Xiaomi Mi 5S Plus',
+        'Apple Iphone 8S Plus','Fujitsu F-04E','Oppo A71']
+    function add(){
+        smartPhone.push(document.getElementById('newProduct').value)
+        document.getElementById('newProduct').value=''
+        display()
+    }
+    function display(){
+        let text='<table><tr><td><strong>Product Name</td>'
+        text+='<td></td>'
+        text+='<td style="text-align: right;color: #d61b06"><strong>'+smartPhone.length+' Products'+'</strong></td></tr>'
+        for(let i=0;i<smartPhone.length;i++){
+            text+='<tr>'
+            text+='<td>'+smartPhone[i]+'</td>'
+            text+='<td>'+'<button class="nutNhan" type="button" value="'+i+'" onClick="edit(this.value)">Edit</button>'+'</td>'
+            text+='<td style="text-align: center">'+'<button class="nutNhan" type="button" value="'+i+'" onClick="xoa(this.value)">Delete</button>'+'</td>'+'</tr>'
+            console.log(text)
+        }
+        text+='</table>'
+        document.getElementById('table').innerHTML=text
+    }
+    function xoa(i){
+        if(confirm("Are you sure want to delete it?")===true) {
+            smartPhone.splice(i, 1)
+            display()
+        }
+    }
+    function edit(i){
+        smartPhone[i]=prompt('Edit')
+        display()
+    }
+</script>
+</body>
+</html>

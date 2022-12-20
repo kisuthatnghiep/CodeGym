@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="tamgiac"></p>
+<script>
+    a=+prompt('Nhập gi trị a: ')
+    b=+prompt('Nhập gi trị b: ')
+    c=+prompt('Nhập gi trị c: ')
+    if (a>0&&b>0&&c>0&&(a+b-c)>0&&(a+c-b)>0&&(b+c-a)>0){
+        document.getElementById('tamgiac').innerText='a, b, c là độ dài 3 cạnh của tam giác'
+    }else {
+        document.getElementById('tamgiac').innerText='a, b, c không phải là độ dài 3 cạnh của tam giác'
+    }
+</script>
+</body>
+</html>

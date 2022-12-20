@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000px" height="700px"></canvas>
+<script>
+
+    let myRectangle = function (a,b){
+        this.chieuDai=a
+        this.chieuRong=b
+        this.setChieuDai=function (a){
+        this.chieuDai=a
+        }
+        this.setChieuRong=function (b){
+        this.chieuRong=b
+        }
+        this.dienTich=function (){
+            return this.chieuDai*this.chieuRong
+        }
+        this.chuVi=function (){
+            return (this.chieuDai+this.chieuRong)*2
+        }
+        this.ve=function (){
+            var ctx=document.getElementById('canvas').getContext('2d')
+            ctx.moveTo(500,300)
+            ctx.lineTo(500+this.chieuDai,300)
+            ctx.lineTo(500+this.chieuDai,300+this.chieuRong)
+            ctx.lineTo(500,300+this.chieuRong)
+            ctx.lineTo(500,300)
+            ctx.stroke()
+        }
+    }
+    let hinhChuNhat=new myRectangle(50,30)
+    hinhChuNhat.setChieuDai(500)
+    hinhChuNhat.setChieuRong(300)
+    document.write('Diện tích = '+hinhChuNhat.dienTich())
+    document.write('<br>Chu vi = '+hinhChuNhat.chuVi())
+    hinhChuNhat.ve()
+
+</script>
+</body>
+</html>

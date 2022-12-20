@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    button{
+        width: 180px;
+        height: 30px;
+    }
+</style>
+<body>
+<h3>Nokia</h3>
+<input type="text" id="soanTinNokia" style="width: 540px;height: 50px"><br><br>
+<button type="button" onclick="guiTinNhanNokia()">Send</button>
+<button type="button" onclick="xemTNGuiNokia()">Message Sent</button>
+<button type="button" onclick="xemTNDenNokia()">Message Received</button><br>
+<button type="button" onclick="draftMessageNokia()">Save draft Message</button>
+<button type="button" onclick="chargingNokia()">Charging</button>
+<button type="button" onclick="turnOnNokia()">Turn on</button><br>
+<button type="button" onclick="turnOffNokia()">Turn off</button>
+<button type="button" onclick="checkOnOffNokia()">Check ON/OFF</button>
+<p id="TNNokia"></p>
+<h3>Iphone</h3>
+<input style="width: 540px;height: 50px" type="text" id="soanTinIphone" ><br><br>
+<button type="button" onclick="guiTinNhanIphone()">Send</button>
+<button type="button" onclick="xemTNGuiIphone()">Message Sent</button>
+<button type="button" onclick="xemTNDenIphone()">Message Received</button><br>
+<button type="button" onclick="draftMessageIphone()">Save draft Message</button>
+<button type="button" onclick="chargingIphone()">Charging</button>
+<button type="button" onclick="turnOnIphone()">Turn on</button><br>
+<button type="button" onclick="turnOffIphone()">Turn off</button>
+<button type="button" onclick="checkOnOffIphone()">Check ON/OFF</button>
+
+<p id="TNIphone"></p>
+<script>
+    let Mobile=function (pin,name,memoryTnNhap,memoryTnDen,memoryTnGui) {
+        this.name=name
+        this.memoryTnNhap=memoryTnNhap
+        this.memoryTnDen = memoryTnDen;
+        this.pin = pin;
+        this.memoryTnGui = memoryTnGui;
+        this.flag=true
+    this.checkOnOff=function (){
+        if(!this.flag){
+            alert('Điện thoại '+name+' đang tắt')
+        }else{
+            alert('Điện thoại '+name+' đang bật')
+        }
+    }
+    this.TurnOn=function (){
+        if(this.pin!==0) {
+            this.flag = true
+            alert('Điện thoại '+name+' đã mở')
+            this.pin--
+        }
+    }
+    this.TurnOff=function (){
+         this.flag=false
+        alert('Điện thoại '+name+' đã tắt')
+        this.pin--
+    }
+    this.Charging=function (){
+        for(let i=this.pin;i<pin;i++) {
+            this.pin++
+        }
+    }
+    this.SendMessage=function (){
+        if(this.flag) {
+            this.memoryTnGui.unshift(document.getElementById('soanTin' + name).value)
+            this.pin--
+        }
+        console.log(this.pin)
+    }
+    this.draftMessage=function (){
+        if(this.flag) {
+            this.memoryTnNhap.unshift(document.getElementById('soanTin' + name).value)
+            this.pin--
+            console.log(this.pin)
+        }
+    }
+    this.lookMessageSent=function (){
+        if(this.flag){
+            for(let i=0;i<this.memoryTnGui.length;i++) {
+                document.getElementById('TN' + name).innerHTML = this.memoryTnGui[i]+'<br>'
+            }
+        this.pin--
+            console.log(this.pin)
+            }
+    }
+    this.lookMessageReceived=function (){
+        if(this.flag) {
+            document.getElementById('TN' + name).innerHTML = this.memoryTnDen[0]
+            this.pin--
+            console.log(this.pin)
+        }
+    }
+
+    }
+    //Nokia
+    let nokia=new Mobile(15,'Nokia',[],[],[])
+    let iphone=new Mobile(10,'Iphone',[],[],[])
+    function guiTinNhanNokia(){
+        hetPinNokia()
+        nokia.SendMessage()
+        iphone.memoryTnDen.unshift(document.getElementById('soanTinNokia').value)
+        document.getElementById('soanTinNokia').value=''
+    }
+    function xemTNGuiNokia() {
+        hetPinNokia()
+        nokia.lookMessageSent()
+    }
+    function xemTNDenNokia() {
+        hetPinNokia()
+        nokia.lookMessageReceived()
+    }
+    function draftMessageNokia(){
+        hetPinNokia()
+        nokia.draftMessage()
+        console.log(nokia.flag)
+        console.log(nokia.pin)
+    }
+    function chargingNokia(){
+        nokia.Charging()
+    }
+    function turnOnNokia(){
+        hetPinNokia()
+        nokia.TurnOn()
+        console.log(nokia.flag)
+    }
+    function turnOffNokia(){
+        nokia.TurnOff()
+        console.log(nokia.flag)
+    }
+    function checkOnOffNokia(){
+        hetPinNokia()
+        nokia.checkOnOff()
+
+    }
+function hetPinNokia(){
+    if(nokia.pin===0){
+        turnOffNokia()
+    }
+    if(nokia.pin<0){
+        nokia.pin=0
+    }
+}
+
+    //Iphone
+
+    function guiTinNhanIphone(){
+        hetPinIphone()
+        iphone.SendMessage()
+        nokia.memoryTnDen.unshift(document.getElementById('soanTinIphone').value)
+        document.getElementById('soanTinIphone').value=''
+
+    }
+    function xemTNGuiIphone() {
+        hetPinIphone()
+        iphone.lookMessageSent()
+
+    }
+    function xemTNDenIphone() {
+        hetPinIphone()
+        iphone.lookMessageReceived()
+
+    }
+    function draftMessageIphone(){
+        hetPinIphone()
+        nokia.draftMessage()
+
+    }
+    function chargingIphone(){
+        iphone.Charging()
+    }
+    function turnOnIphone(){
+        hetPinIphone()
+        iphone.TurnOn()
+
+    }
+    function turnOffIphone(){
+        iphone.TurnOff()
+    }
+    function checkOnOffIphone(){
+        hetPinIphone()
+        iphone.checkOnOff()
+    }
+    function hetPinIphone(){
+        if(iphone.pin<0){
+            iphone.pin=0
+        }
+        if(iphone.pin===0){
+            turnOffIphone()
+        }
+    }
+</script>
+</body>
+</html>

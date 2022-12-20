@@ -1,0 +1,72 @@
+#background{
+    padding-top: 50%;
+    width: 100%;
+    background: url("slider.webp") top center/cover no-repeat;
+}
+.modal-add{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-container-add{
+    width: 500px;
+    min-height: 200px;
+    background-color: #FFFFFF;
+    position: relative;
+}
+.modal-header-add{
+    background-color: dodgerblue;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 120px;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+.modal-close-add{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #FFFFFF;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.modal-close-add:hover{
+    opacity: 1;
+}
+.modal-body-add{
+    padding: 16px;
+}
+.modal-label-add{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.modal-input-add{
+    border: 1px solid #ccc;
+    width: 97%;
+    font-size: 15px;
+    padding: 10px;
+    display: block;
+    margin-bottom: 15px;
+}
+#fix-add{
+    background-color: dodgerblue;
+    border: none;
+    color: #FFFFFF;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 12px;
+    cursor: pointer;
+}
+#fix-add:hover{
+    opacity: 0.9;
+}

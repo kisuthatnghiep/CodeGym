@@ -1,0 +1,421 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+#search_btn:hover{
+    opacity: 0.9;
+}
+#search_btn{
+    cursor: pointer;
+    height: 23px;
+    border-radius: 4px;
+    width: 60px;
+    background-color: #FFFFFF;
+
+}
+html{
+    font-family: Arial;
+}
+#header{
+    height: 46px;
+    background-color: #000;
+}
+#nav li:hover .subnav{
+    display: block;
+}
+#nav{
+float: left;
+}
+#nav li{
+    display: inline-block;
+    position: relative;
+}
+#nav .subnav{
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+#nav .subnav a{
+    color: #000000;
+}
+#nav>li>a{
+    color: #FFF;
+}
+#nav li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: inline-block;
+}
+#nav >li:hover> a {
+    background-color: gainsboro;
+    color: black;
+}
+.introduction{
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 64px;
+}
+.heading-section{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+#intro_nike{
+    margin-top: 30px;
+    text-align: justify;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.4;
+}
+#slider{
+    padding-top: 52%;
+    background: url("slider.webp") top center/cover no-repeat;
+}
+.clear{
+    clear: both;
+}
+.image_intro_list{
+    padding-top: 45px;
+    padding-bottom: 80px;
+}
+.introduction .intro_image{
+    float: left;
+    width: 50%;
+}
+.text_white{
+    color: #FFFFFF;
+}
+.background_shoes{
+    background-color: black;
+}
+
+/*css shoes*/
+#table_list{
+    margin-top: 30px;
+    margin-left: 70px;
+    /*float: left;*/
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+#table_list ul li{
+    padding-top: 20px;
+}
+    /*#table_list ul{*/
+    /*    color: #FFFFFF;*/
+    /*}*/
+#shoes_padding{
+    padding-bottom: 80px;
+    color: #FFFFFF;
+}
+#shoesProduct{
+    padding-top: 50px;
+    width: 1050px;
+    display: inline-block;
+}
+#add_product_shoes{
+margin-left: 1130px;
+}
+/*css clothing*/
+#table_list2 {
+    margin-top: 30px;
+    margin-left: 70px;
+    /*float: left;*/
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+#table_list2 ul li{
+    padding-top: 20px;
+}
+#clothing_padding{
+    padding-bottom: 80px;
+}
+#clothingProduct{
+    padding-top: 50px;
+    width: 1050px;
+    display: inline-block;
+}
+#add_product_clothing{
+    margin-left: 1120px;
+}
+/*css collection*/
+#table_list3 {
+    margin-top: 30px;
+    margin-left: 70px;
+
+    /*float: left;*/
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+#table_list3 ul li{
+    padding-top: 20px;
+}
+#collection_padding{
+    color: #FFFFFF;
+    padding-bottom: 80px;
+}
+#collectionProduct{
+    padding-top: 50px;
+    width: 1050px;
+    display: inline-block;
+}
+#add_product_collection{
+    margin-left: 1110px;
+}
+/*icon*/
+.icon{
+    width: 26px;
+    height: 26px;
+}
+
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal-container{
+    width: 900px;
+    min-height: 200px;
+    background-color: #FFFFFF;
+    position: relative;
+}
+.modal-header{
+    background-color: orangered;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 120px;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+.modal-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #FFFFFF;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.modal-close:hover{
+    opacity: 1;
+}
+.modal-body{
+    padding: 16px;
+}
+.modal-label{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.modal-input{
+    border: 1px solid #ccc;
+    width: 97%;
+    font-size: 15px;
+    padding: 10px;
+    display: block;
+    margin-bottom: 15px;
+}
+#fix{
+    background-color: orangered;
+    border: none;
+    color: #FFFFFF;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 12px;
+    cursor: pointer;
+}
+#fix:hover{
+    opacity: 0.9;
+}
+.modal.open{
+    display: flex;
+}
+
+/*modal add*/
+.modal-add{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal-container-add{
+    width: 900px;
+    min-height: 200px;
+    background-color: #FFFFFF;
+    position: relative;
+}
+.modal-header-add{
+    background-color: orangered;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 120px;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+.modal-close-add{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #FFFFFF;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.modal-close-add:hover{
+    opacity: 1;
+}
+.modal-body-add{
+    padding: 16px;
+}
+.modal-label-add{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.modal-input-add{
+    border: 1px solid #ccc;
+    width: 97%;
+    font-size: 15px;
+    padding: 10px;
+    display: block;
+    margin-bottom: 15px;
+}
+#fix-add{
+    background-color: orangered;
+    border: none;
+    color: #FFFFFF;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 12px;
+    cursor: pointer;
+}
+#fix-add:hover{
+    opacity: 0.9;
+}
+.modal-add.open{
+    display: flex;
+}
+
+#table_list li a{
+    color: deeppink;
+}
+#table_list2 li a{
+    color: deeppink;
+}
+#table_list3 li a{
+    color: deeppink;
+}
+#add_product_shoes ul li a{
+    color: deeppink;
+}
+#add_product_clothing ul li a{
+    color: deeppink;
+}
+#add_product_collection ul li a{
+    color: deeppink;
+}
+#footer ul li a{
+    color: black;
+}
+#footer span a {
+    color: black;
+}
+#icon-socical-network a i{
+    color: black;
+}
+
+/*login*/
+.modal-login{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-container-login{
+    width: 500px;
+    min-height: 200px;
+    background-color: #FFFFFF;
+    position: relative;
+}
+.modal-header-login{
+    background-color: dodgerblue;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 120px;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+.modal-close-login{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #FFFFFF;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.modal-close-login:hover{
+    opacity: 1;
+}
+.modal-body-login{
+    padding: 16px;
+}
+.modal-label-login{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.modal-input-login{
+    border: 1px solid #ccc;
+    width: 97%;
+    font-size: 15px;
+    padding: 10px;
+    display: block;
+    margin-bottom: 15px;
+}
+#fix-login{
+    background-color: dodgerblue;
+    border: none;
+    color: #FFFFFF;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 12px;
+    cursor: pointer;
+}
+#fix-login:hover{
+    opacity: 0.9;
+}
+.modal-login.hide{
+    display: none;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  var tich='<table border="1" cellSpacing="1" width="700">'
+  for (i=1;i<=10;i++){
+    tich=tich+'<tr>';
+    for(j=2;j<=9;j++){
+      var result=i*j
+      tich=tich+'<td>'+j+"x"+i+"="+result+'</td>'
+    }
+    tich=tich+'</tr>'
+  }
+  tich=tich+'</table>'
+  document.write(tich)
+</script>
+</body>
+</html>

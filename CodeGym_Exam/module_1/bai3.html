@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sumOfListPrime(x) {
+        let sumPrime=0;
+        for (let j = 2; j <= x; j++) {
+            let b = checkPrime(j);
+            if (b === 1) {
+                sumPrime+=j;
+            }
+        }
+        return sumPrime
+    }
+    function checkPrime(a){
+        let flag=true;
+        let can_a=Math.sqrt(a);
+        for(let i=2;i<=can_a;i++){
+            if(a%i===0){
+                flag=false;
+                break;
+            }
+        }
+        if(flag){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
+    console.log(sumOfListPrime(9));
+</script>
+</body>
+</html>

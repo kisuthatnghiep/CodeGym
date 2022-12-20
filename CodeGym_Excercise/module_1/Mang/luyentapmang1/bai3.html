@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="mang"></p>
+<script>
+  let numbers=[22,21,5,3,6,49,12,4,8,56]
+  let max=numbers[0]
+  let index=0
+  let tong=0
+  let averageValue
+  for (let i=0;i<numbers.length;i++){
+    if(max<=numbers[i]){
+      max=numbers[i]
+      index=i
+    }
+    tong+=numbers[i]
+    averageValue=tong/(i+1)
+  }
+  document.getElementById('mang').innerHTML='Giá trị lớn nhất trong mảng là '+max+' tại vị trí có chỉ số '
+          +index+'<br>' +'Giá trị trung bình của các phần tử trong mảng bằng '+averageValue
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<script>
+  let ID=prompt("who's there?", '');
+
+  if(ID=='Admin'){
+let pass=prompt('Input password!', '')
+    if(pass=='TheMaster'){
+      alert('Welcome!');
+    }else if(pass == '') {
+      alert('Canceled.')
+    }else{
+        alert('Wrong password')
+      }
+    } else if(ID == ''){
+    alert('Canceled')
+  }else{
+    alert("i don't know you")
+  }
+</script>
+</body>
+</html>

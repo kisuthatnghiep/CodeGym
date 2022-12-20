@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let flag=false
+    let mangSoNguyen=prompt('Nhập vào một mảng số nguyên 10 phần tử: ');
+    let arr=mangSoNguyen.split(',')
+    phanTuV=+prompt('Nhập vào phần tử V')
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]==phanTuV) {
+            flag = true;
+        }
+    }
+    if(flag){
+        alert('V is in the array')
+    }else{
+        alert('V is not in the array')
+    }
+</script>
+</body>
+</html>

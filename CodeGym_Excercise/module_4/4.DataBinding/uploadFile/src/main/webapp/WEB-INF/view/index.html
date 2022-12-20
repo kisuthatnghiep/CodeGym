@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<h3>Product Management</h3>
+<p>
+  <a th:href="@{/products/showCreate}">
+    Add new product
+  </a>
+</p>
+<table id = "products">
+<tr>
+  <th>Product No</th>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Image</th>
+</tr>
+  <tr th:each="p,pCount: ${products}" th:object="${p}">
+    <td th:text="${pCount.count}"></td>
+    <td th:text="*{name}"></td>
+    <td th:text="*{description}"></td>
+    <td><img style="width: 20%" th:src="@{'/image/' + *{image}}" alt=""></td>
+  </tr>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

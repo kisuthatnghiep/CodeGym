@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  soDien=+prompt('nhập số điện gia đình sử dụng trong tháng: ','');
+  if(soDien>0&&soDien<=50){
+    tienDien=soDien*1.678*0.1
+  }else if(soDien>50&&soDien<=100) {
+    tienDien = (1.678 * 50 + (soDien - 50) * 1.734) * 0.1
+  }else if(soDien>100&&soDien<=200) {
+    tienDien = (1.678 * 50 + 50 * 1.734 + (soDien - 100) * 2.014) * 0.1
+  }else if(soDien>200&&soDien<=300) {
+    tienDien = (1.678 * 50 + 50 * 1.734 + 100 * 2.014 + (soDien - 200) * 2.536) * 0.1
+  }else if(soDien>300&&soDien<=400){
+    tienDien = (1.678 * 50 + 50 * 1.734 + 100 * 2.014 + 100* 2.536+(soDien-300)*2.834) * 0.1
+  }else{
+    tienDien = (1.678 * 50 + 50 * 1.734 + 100 * 2.014 + 100* 2.536+100*2.834+(soDien-400)*2.927) * 0.1
+  }
+  alert('Tiền điện hộ gia đình sử dụng trong tháng là: '+tienDien +' VNĐ')
+</script>
+</body>
+</html>

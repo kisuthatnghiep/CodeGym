@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    tr,th{border: 1px solid}
+    th,tr,table{border-collapse: collapse}
+    th{
+        width: 20px;
+    }
+table{
+    margin-left: 420px;
+}
+</style>
+<body style="text-align: center">
+<h2>Caro Game Simple</h2>
+<hr style="width: 300px">
+<p id="caro"></p>
+<br>
+<input type="button" value="Change Value" onclick="changevalue()">
+<script>
+    let t=1
+    banCo=[];
+    let text='<table style="border: 1px solid">'
+    for(let i=0;i<10;i++){
+        banCo[i]= ['<tr><th>&nbsp;</th>','<th>&nbsp;</th>','<th>&nbsp;</th>','<th>&nbsp;</th>','<th>&nbsp;</th>'
+            ,'<th>&nbsp;</th>','<th>&nbsp;</th>','<th>&nbsp;</th>','<th>&nbsp;</th>','<th>&nbsp;</th></tr>'];
+    }
+    banCo[10]=['&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;']
+    banCo[11]=['&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;']
+    banCo[12]=['&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;']
+    for(let i=0;i<10;i++){
+        for(let j=0;j<10;j++){
+            text+=banCo[i][j]
+        }
+    }
+    document.getElementById('caro').innerHTML=text+'</table>'
+    function changevalue() {
+        let trucX = +prompt('X = ');
+        let trucY = +prompt('Y = ');
+        text = '<table style="border: 1px solid">';
+        if (banCo[trucX][trucY] === '<th>x</th>' || banCo[trucX][trucY] === '<th>0</th>' ||
+            banCo[trucX][trucY] === '<tr><th>x</th>' || banCo[trucX][trucY] === '<tr><th>0</th>' ||
+            banCo[trucX][trucY] === '<th>x</th></tr>' || banCo[trucX][trucY] === '<th>0</th></tr>') {
+            alert('ô này đã được đánh, vui lòng đánh ô khác!!')
+        } else if (t % 2 === 1 && trucY !== 0 && trucY!== 9) {
+            banCo[trucX][trucY] = '<th>x</th>';
+            t++
+        } else if (t % 2 === 1 && trucY === 0) {
+            banCo[trucX][trucY] = '<tr><th>x</th>';
+            t++
+            console.log(banCo[0][0])
+        } else if (t % 2 === 0 && trucY !== 0 && trucY!== 9) {
+            banCo[trucX][trucY] = '<th>0</th>';
+            t++
+        } else if (t % 2 === 0 && trucY === 0) {
+            banCo[trucX][trucY] = '<tr><th>0</th>';
+            t++
+            console.log(banCo[1][0])
+        } else if (t % 2 === 1 && trucY === 9) {
+            banCo[trucX][trucY] = '<th>x</th></tr>';
+            t++
+            console.log(banCo[0][9])
+        } else if (t % 2 === 0 && trucY === 9) {
+            banCo[trucX][trucY] = '<th>0</th></tr>';
+            t++
+        }
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                text += banCo[i][j]
+            }
+        }
+        document.getElementById('caro').innerHTML = text + '</table>'
+        //Điều kiện thắng
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                if((banCo[0][j]==='<th>x</th>'&&banCo[1][j]==='<th>x</th>'&&banCo[2][j]==='<th>x</th>'&& banCo[3][j]==='<th>x</th>' &&banCo[4][j]!=='<th>0</th>')||
+                    (banCo[0][j]==='<tr><th>x</th>'&&banCo[1][j]==='<tr><th>x</th>'&&banCo[2][j]==='<tr><th>x</th>'&& banCo[3][j]==='<tr><th>x</th>' &&banCo[4][j]!=='<tr><th>0</th>')||
+                    (banCo[0][j]==='<th>x</th></tr>'&&banCo[1][j]==='<th>x</th></tr>'&&banCo[2][j]==='<th>x</th></tr>'&& banCo[3][j]==='<th>x</th></tr>' &&banCo[4][j]!=='<th>0</th></tr>')||
+                    (banCo[0][j]==='<tr><th>x</th>'&&banCo[1][j+1]==='<th>x</th>'&&banCo[2][j+2]==='<th>x</th>'&& banCo[3][j+3]==='<th>x</th>' &&banCo[4][j+4]!=='<th>0</th>')||
+                    (banCo[0][j]==='<th>x</th></tr>'&&banCo[1][j-1]==='<th>x</th>'&&banCo[2][j-2]==='<th>x</th>'&& banCo[3][j-3]==='<th>x</th>' &&banCo[4][j-4]!=='<th>0</th>')||
+                    (banCo[0][j]==='<th>x</th>'&&banCo[1][j+1]==='<th>x</th>'&&banCo[2][j+2]==='<th>x</th>'&& banCo[3][j+3]==='<th>x</th>' &&banCo[4][j+4]!=='<th>0</th>')||
+                    (banCo[0][j]==='<th>x</th>'&&banCo[1][j-1]==='<th>x</th>'&&banCo[2][j-2]==='<th>x</th>'&& banCo[3][j-3]==='<th>x</th>' &&banCo[4][j-4]!=='<th>0</th>')) {
+                    alert('X thắng')
+                    break;
+                }else if((banCo[0][j]==='<th>0</th>'&&banCo[1][j]==='<th>0</th>'&&banCo[2][j]==='<th>0</th>'&& banCo[3][j]==='<th>0</th>' &&banCo[4][j]!=='<th>x</th>')||
+                    (banCo[0][j]==='<tr><th>0</th>'&&banCo[1][j]==='<tr><th>0</th>'&&banCo[2][j]==='<tr><th>0</th>'&& banCo[3][j]==='<tr><th>0</th>' &&banCo[4][j]!=='<tr><th>x</th>')||
+                    (banCo[0][j]==='<th>0</th></tr>'&&banCo[1][j]==='<th>0</th></tr>'&&banCo[2][j]==='<th>0</th></tr>'&& banCo[3][j]==='<th>0</th></tr>' &&banCo[4][j]!=='<th>x</th></tr>')||
+                    (banCo[0][j]==='<tr><th>0</th>'&&banCo[1][j+1]==='<th>0</th>'&&banCo[2][j+2]==='<th>0</th>'&& banCo[3][j+3]==='<th>0</th>' &&banCo[4][j+4]!=='<th>x</th>')||
+                    (banCo[0][j]==='<th>0</th></tr>'&&banCo[1][j-1]==='<th>0</th>'&&banCo[2][j-2]==='<th>0</th>'&& banCo[3][j-3]==='<th>0</th>' &&banCo[4][j-4]!=='<th>x</th>')||
+                    (banCo[0][j]==='<th>0</th>'&&banCo[1][j+1]==='<th>0</th>'&&banCo[2][j+2]==='<th>0</th>'&& banCo[3][j+3]==='<th>0</th>' &&banCo[4][j+4]!=='<th>x</th>')||
+                    (banCo[0][j]==='<th>0</th>'&&banCo[1][j-1]==='<th>0</th>'&&banCo[2][j-2]==='<th>0</th>'&& banCo[3][j-3]==='<th>0</th>' &&banCo[4][j-4]!=='<th>x</th>')){
+                    alert('0 thắng')
+                    break;
+                }else if ((banCo[i][j] === '<th>x</th>' && banCo[i][j + 1] === '<th>x</th>' && banCo[i][j + 2] === '<th>x</th>' && banCo[i][j + 3] === '<th>x</th>'&&banCo[i][j + 4]!=='<th>0</th>'&&banCo[i][j + 4]!=='<th>0</th></tr>'&&banCo[i][j-1]!=='<th>0</th>'&&banCo[i][j -1]!=='<tr><th>0</th>')||
+                    (banCo[i][j] === '<th>x</th>'&& i>0 && banCo[i+1][j] === '<th>x</th>' && banCo[i+2][j] === '<th>x</th>' && banCo[i+3][j] === '<th>x</th>'&&banCo[i+4][j]!=='<th>0</th>'&&banCo[i-1][j]!=='<th>0</th>')||
+                    (banCo[i][j] === '<th>x</th>'&& i>0 && banCo[i+1][j+1] === '<th>x</th>' && banCo[i+2][j+2] === '<th>x</th>' && banCo[i+3][j+3] === '<th>x</th>'&&banCo[i+4][j + 4]!=='<th>0</th>'&&banCo[i+4][j + 4]!=='<th>0</th></tr>'&&banCo[i-1][j-1]!=='<th>0</th>'&&banCo[i-1][j -1]!=='<tr><th>0</th>')||
+                    (banCo[i][j] === '<th>x</th>'&& i>0 && banCo[i+1][j-1] === '<th>x</th>' && banCo[i+2][j-2] === '<th>x</th>' && banCo[i+3][j-3] === '<th>x</th>'&&banCo[i+4][j - 4]!=='<th>0</th>'&&banCo[i+4][j - 4]!=='<tr><th>0</th>'&&banCo[i-1][j+1]!=='<th>0</th>'&&banCo[i-1][j +1]!=='<th>0</th></tr>')) {
+                    alert('X thắng')
+                    break;
+                } else if ((banCo[i][j] === '<th>0</th>' && banCo[i][j + 1] === '<th>0</th>' && banCo[i][j + 2] === '<th>0</th>' && banCo[i][j + 3] === '<th>0</th>'&&banCo[i][j + 4]!=='<th>x</th>'&&banCo[i][j + 4]!=='<th>x</th></tr>'&&banCo[i][j-1]!=='<th>x</th>'&&banCo[i][j -1]!=='<tr><th>x</th>')||
+                    (banCo[i][j] === '<th>0</th>'&& i>0 && banCo[i+1][j] === '<th>0</th>' && banCo[i+2][j] === '<th>0</th>' && banCo[i+3][j] === '<th>0</th>'&&banCo[i+4][j]!=='<th>x</th>'&&banCo[i-1][j]!=='<th>x</th>')||
+                    (banCo[i][j] === '<th>0</th>'&& i>0 && banCo[i+1][j+1] === '<th>0</th>' && banCo[i+2][j+2] === '<th>0</th>' && banCo[i+3][j+3] === '<th>0</th>'&&banCo[i+4][j + 4]!=='<th>x</th>'&&banCo[i+4][j + 4]!=='<th>x</th></tr>'&&banCo[i-1][j-1]!=='<th>x</th>'&&banCo[i-1][j -1]!=='<tr><th>x</th>')||
+                    (banCo[i][j] === '<th>0</th>'&& i>0 && banCo[i+1][j-1] === '<th>0</th>' && banCo[i+2][j-2] === '<th>0</th>' && banCo[i+3][j-3] === '<th>0</th>'&&banCo[i+4][j - 4]!=='<th>x</th>'&&banCo[i+4][j - 4]!=='<tr><th>x</th>'&&banCo[i-1][j+1]!=='<th>x</th>'&&banCo[i-1][j +1]!=='<th>x</th></tr>')) {
+                    alert('0 thắng')
+                    break;
+                }else if((banCo[i][j] === '<tr><th>x</th>' && banCo[i][j + 1] === '<th>x</th>' && banCo[i][j + 2] === '<th>x</th>' && banCo[i][j + 3] === '<th>x</th>'&&banCo[i][j + 4]!=='<th>0</th>')||
+                    (banCo[i][j] === '<tr><th>x</th>' && banCo[i+1][j] === '<tr><th>x</th>' && banCo[i+2][j] === '<tr><th>x</th>' && banCo[i+3][j] === '<tr><th>x</th>'&&banCo[i+4][j]!=='<tr><th>0</th>'&&banCo[i-1][j]!=='<tr><th>0</th>')||
+                    (banCo[i][j] === '<th>x</th>'&& i>0 && banCo[i+1][j-1] === '<th>x</th>' && banCo[i+2][j-2] === '<th>x</th>' && banCo[i+3][j-3] === '<tr><th>x</th>'&&banCo[i-1][j + 1]!=='<th>0</th>')){
+                    alert('X thắng')
+                    break;
+                }else if((banCo[i][j] === '<th>x</th>' && banCo[i][j + 1] === '<th>x</th>' && banCo[i][j + 2] === '<th>x</th>' && banCo[i][j + 3] === '<th>x</th></tr>'&&banCo[i][j -1]!=='<th>0</th>')||
+                    (banCo[i][j] === '<th>x</th></tr>'&& i>0 && banCo[i+1][j] === '<th>x</th></tr>' && banCo[i+2][j] === '<th>x</th></tr>' && banCo[i+3][j] === '<th>x</th></tr>'&&banCo[i+4][j]!=='<th>0</th></tr>'&&banCo[i-1][j]!=='<th>0</th></tr>')||
+                    (banCo[i][j] === '<th>x</th>'&& i>0 && banCo[i+1][j+1] === '<th>x</th>' && banCo[i+2][j+2] === '<th>x</th>' && banCo[i+3][j+3] === '<th>x</th></tr>'&&banCo[i-1][j-1]!=='<th>0</th>')){
+                    alert('X thắng')
+                    break;
+                }else if((banCo[i][j] === '<tr><th>0</th>' && banCo[i][j + 1] === '<th>0</th>' && banCo[i][j + 2] === '<th>0</th>' && banCo[i][j + 3] === '<th>0</th>'&&banCo[i][j + 4]!=='<th>x</th>')||
+                    (banCo[i][j] === '<tr><th>0</th>'&& i>0 && banCo[i+1][j] === '<tr><th>0</th>' && banCo[i+2][j] === '<tr><th>0</th>' && banCo[i+3][j] === '<tr><th>0</th>'&&banCo[i+4][j]!=='<tr><th>x</th>'&&banCo[i-1][j]!=='<tr><th>x</th>')||
+                    (banCo[i][j] === '<th>0</th>'&& i>0 && banCo[i+1][j-1] === '<th>0</th>' && banCo[i+2][j-2] === '<th>0</th>' && banCo[i+3][j-3] === '<tr><th>0</th>'&&banCo[i-1][j + 1]!=='<th>x</th>')){
+                    alert('0 thắng')
+                    break;
+                }else if((banCo[i][j] === '<th>0</th>' && banCo[i][j + 1] === '<th>0</th>' && banCo[i][j + 2] === '<th>0</th>' && banCo[i][j + 3] === '<th>0</th></tr>'&&banCo[i][j -1]!=='<th>x</th>')||
+                    (banCo[i][j] === '<th>0</th></tr>'&& i>0 && banCo[i+1][j] === '<th>0</th></tr>' && banCo[i+2][j] === '<th>0</th></tr>' && banCo[i+3][j] === '<th>0</th></tr>'&&banCo[i+4][j]!=='<th>x</th></tr>'&&banCo[i-1][j]!=='<th>x</th></tr>')||
+                    (banCo[i][j] === '<th>0</th>'&& i>0 && banCo[i+1][j+1] === '<th>0</th>' && banCo[i+2][j+2] === '<th>0</th>' && banCo[i+3][j+3] === '<th>0</th></tr>'&&banCo[i-1][j-1]!=='<th>x</th>')){
+                    alert('0 thắng')
+                    break;
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

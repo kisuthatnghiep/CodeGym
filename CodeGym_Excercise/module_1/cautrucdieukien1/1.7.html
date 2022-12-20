@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let phiBatbuoc=25000
+  let soPhut=+prompt('Nhập vào số phút gọi trong tháng: ', "")
+  if(soPhut<=50){
+    cuocDT=phiBatbuoc+soPhut*600
+  }else if(soPhut<=200){
+    cuocDT=phiBatbuoc+50*600+(soPhut-50)*400
+  }else{
+    cuocDT=phiBatbuoc+50*600+150*400+200*(soPhut-200)
+  }
+  alert('Cước điện thoại của hộ gia đình trong tháng là '+cuocDT+' VNĐ')
+</script>
+</body>
+</html>

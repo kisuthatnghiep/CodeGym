@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let Apple=function (){
+      this.getWeight=10
+      this.decrease=function (  ){
+          this.getWeight--
+      }
+      this.isEmpty=function (){
+          alert('Táo đã được ăn hết')
+      }
+  }
+  let Human=function (name,gender,weight){
+      this.name=name
+      this.setGender=function (){
+          this.gender=gender
+      }
+      this.isMale=function (){
+          if(this.gender===Male){
+              return true
+          }else{
+              return false
+          }
+      }
+      this.weight=weight
+      this.getWeight=function (){
+          return this.weight
+      }
+      this.say=function (word){
+          console.log(word)
+      }
+      this.eat=function (apple) {
+          if (apple.getWeight > 0) {
+              this.weight++
+              apple.decrease()
+          }
+      }
+      this.checkApple=function (){
+          return apple.getWeight
+      }
+  }
+let adam= new Human('Adam','Male',50);
+  let eva= new Human('Eva','Female',40);
+  let apple_1= new Apple()
+  document.write('Adam ăn táo'+'<br>')
+  adam.eat(apple_1)
+  document.write('Adam nặng '+adam.getWeight()+' đv<br>')
+  document.write('Quả táo còn '+apple_1.getWeight+' đv<br>')
+  document.write('Adam ăn táo'+'<br>')
+  adam.eat(apple_1)
+  document.write('Adam nặng '+adam.getWeight()+' đv<br>')
+  document.write('Quả táo còn '+apple_1.getWeight+' đv<br>')
+  document.write('Adam ăn táo'+'<br>')
+  adam.eat(apple_1)
+  document.write('Adam nặng '+adam.getWeight()+' đv<br>')
+  document.write('Quả táo còn '+apple_1.getWeight+' đv<br>')
+  document.write('Adam ăn táo'+'<br>')
+  adam.eat(apple_1)
+  document.write('Adam nặng '+adam.getWeight()+' đv<br>')
+  document.write('Quả táo còn '+apple_1.getWeight+' đv<br>')
+  document.write('Eva ăn táo'+'<br>')
+  eva.eat(apple_1)
+  document.write('Eva nặng '+eva.getWeight()+' đv<br>')
+  document.write('Quả táo còn '+apple_1.getWeight+' đv<br>')
+  document.write('Eva ăn táo'+'<br>')
+  eva.eat(apple_1)
+  document.write('Eva nặng '+eva.getWeight()+' đv<br>')
+  document.write('Quả táo còn '+apple_1.getWeight+' đv<br>')
+  document.write('Adam ăn táo'+'<br>')
+  adam.eat(apple_1)
+  document.write('Adam nặng '+adam.getWeight()+' đv<br>')
+  document.write('Quả táo còn '+apple_1.getWeight+' đv<br>')
+  document.write('Adam ăn táo'+'<br>')
+  adam.eat(apple_1)
+  document.write('Adam nặng '+adam.getWeight()+' đv<br>')
+  document.write('Quả táo còn '+apple_1.getWeight+' đv<br>')
+  document.write('Adam ăn táo'+'<br>')
+  adam.eat(apple_1)
+  document.write('Adam nặng '+adam.getWeight()+' đv<br>')
+  document.write('Quả táo còn '+apple_1.getWeight+' đv<br>')
+  document.write('Adam ăn táo'+'<br>')
+  adam.eat(apple_1)
+  document.write('Adam nặng '+adam.getWeight()+' đv<br>')
+  document.write('Quả táo còn '+apple_1.getWeight+' đv<br>')
+  document.write('Adam ăn táo'+'<br>')
+  adam.eat(apple_1)
+  document.write('Adam nặng '+adam.getWeight()+' đv<br>')
+  document.write('Quả táo còn '+apple_1.getWeight+' đv<br>')
+  apple_1.isEmpty()
+</script>
+</body>
+</html>

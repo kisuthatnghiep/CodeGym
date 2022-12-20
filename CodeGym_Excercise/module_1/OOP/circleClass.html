@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let circle=function (radius){
+      this.radius=radius;
+      this.getRadius=function (){
+        return this.radius
+      }
+      this.getArea=function (){
+        let pi= Math.PI
+        return pi*radius*radius
+      }
+  };
+  let hinhTron=new circle(2)
+  let radius=hinhTron.getRadius()
+  let area=hinhTron.getArea()
+  alert('radius = '+radius+' and area = '+area)
+</script>
+</body>
+</html>

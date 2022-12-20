@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    th{
+        color: blue;
+    }
+    table,tr,th{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    table{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    th{
+        width: 40px;
+        height: 40px;
+    }
+</style>
+<body onload="bangCaro()">
+<h2 style="text-align: center">Thanh's Caro Game</h2>
+<hr style="width: 880px;text-align: center">
+<br>
+<p id="caro"></p>
+<br>
+<input type="button" value="Reset" onclick="restart()" style="margin-left: 795px;width: 80px;height: 40px">
+<script>
+    let tick='X'
+    var caro=new Array(20)
+    for(let a=0;a<20;a++){
+        caro[a]=[];
+        for (let b=0;b<20;b++){
+            caro[a].push('&nbsp')
+        }
+    }
+
+    function bangCaro(){
+
+        let text='<table>'
+        for(let i=0;i<20;i++){
+            text+='<tr>'
+            for(let j=0;j<20;j++){
+                text+='<th onclick="tickXO('+i+','+j+')">'
+                text+=caro[i][j]
+                text+='</th>'
+            }
+            text+='</tr>'
+        }
+        text+='</table>'
+
+        document.getElementById('caro').innerHTML=text
+        checkWin()
+    }
+    function tickXO(i,j) {
+        if (caro[i][j] === '&nbsp' && checkWin()===undefined) {
+            caro[i][j] = tick
+            bangCaro()
+            if (tick === 'X') {
+                tick = 'O'
+            } else {
+                tick = 'X'
+            }
+        }
+    }
+    function checkWin() {
+        for (let i = 0; i < 20; i++) {
+            for (let j = 0; j < 20; j++) {
+                if (caro[i][j] === 'X' && caro[i][j + 1] === 'X' && caro[i][j + 2] === 'X' && caro[i][j + 3] === 'X' && caro[i][j + 4] !== 'O' && caro[i][j - 1] !== 'O') {
+                    alert('X win')
+                    return 1;
+                }else if(caro[i][j] === 'O' && caro[i][j + 1] === 'O' && caro[i][j + 2] === 'O' && caro[i][j + 3] === 'O' && caro[i][j + 4] !== 'X' && caro[i][j - 1] !== 'X'){
+                    alert('O win')
+                    return 1;
+                }else if(i>0 && i<16 && caro[i][j] === 'X' && caro[i+1][j] === 'X' && caro[i+2][j] === 'X' && caro[i+3][j] === 'X' && caro[i+4][j] !== 'O' && caro[i-1][j] !== 'O'){
+                    alert('X win')
+                    return 1;
+                }else if(i>0 && i<16 && caro[i][j] === 'O' && caro[i+1][j] === 'O' && caro[i+2][j] === 'O' && caro[i+3][j] === 'O' && caro[i+4][j] !== 'X' && caro[i-1][j] !== 'X') {
+                    alert('O win')
+                    return 1;
+                }else if(i>0 && i<16 && caro[i][j] === 'X' && caro[i+1][j+1] === 'X' && caro[i+2][j+2] === 'X' && caro[i+3][j+3] === 'X' && caro[i+4][j+4] !== 'O' && caro[i-1][j-1] !== 'O'){
+                    alert('X win')
+                    return 1;
+                }else if(i>0 && i<16 && caro[i][j] === 'O' && caro[i+1][j+1] === 'O' && caro[i+2][j+2] === 'O' && caro[i+3][j+3] === 'O' && caro[i+4][j+4] !== 'X' && caro[i-1][j-1] !== 'X'){
+                    alert('O win')
+                    return 1;
+                }else if(i>0 && i<16 && caro[i][j] === 'X' && caro[i+1][j-1] === 'X' && caro[i+2][j-2] === 'X' && caro[i+3][j-3] === 'X' && caro[i+4][j-4] !== 'O' && caro[i-1][j+1] !== 'O'){
+                    alert('X win')
+                    return 1;
+                }else if(i>0 && i<16 && caro[i][j] === 'O' && caro[i+1][j-1] === 'O' && caro[i+2][j-2] === 'O' && caro[i+3][j-3] === 'O' && caro[i+4][j-4] !== 'X' && caro[i-1][j+1] !== 'X'){
+                    alert('O win')
+                    return 1;
+                }else if(caro[0][j] === 'X' && caro[1][j] === 'X' && caro[2][j] === 'X' && caro[3][j] === 'X' && caro[4][j] !== 'O'){
+                    alert('X win')
+                    return 1;
+                }else if(caro[0][j] === 'O' && caro[1][j] === 'O' && caro[2][j] === 'O' && caro[3][j] === 'O' && caro[4][j] !== 'X'){
+                    alert('O win')
+                    return 1;
+                }else if(caro[0][j] === 'X' && caro[1][j+1] === 'X' && caro[2][j+2] === 'X' && caro[3][j+3] === 'X' && caro[4][j+4] !== 'O'){
+                    alert('X win')
+                    return 1;
+                }else if(caro[0][j] === 'O' && caro[1][j+1] === 'O' && caro[2][j+2] === 'O' && caro[3][j+3] === 'O' && caro[4][j+4] !== 'X'){
+                    alert('O win')
+                    return 1;
+                }else if(caro[0][j] === 'X' && caro[1][j-1] === 'X' && caro[2][j-2] === 'X' && caro[3][j-3] === 'X' && caro[4][j-4] !== 'O'){
+                    alert('X win')
+                    return 1;
+                }else if(caro[0][j] === 'O' && caro[1][j-1] === 'O' && caro[2][j-2] === 'O' && caro[3][j-3] === 'O' && caro[4][j-4] !== 'X'){
+                    alert('O win')
+                    return 1;
+                }else if(caro[19][j] === 'X' && caro[18][j] === 'X' && caro[17][j] === 'X' && caro[16][j] === 'X' && caro[15][j] !== 'O'){
+                    alert('X win')
+                    return 1;
+                }else if(caro[19][j] === 'O' && caro[18][j] === 'O' && caro[17][j] === 'O' && caro[16][j] === 'O' && caro[15][j] !== 'X'){
+                    alert('O win')
+                    return 1;
+                }else if(caro[19][j] === 'X' && caro[18][j+1] === 'X' && caro[17][j+2] === 'X' && caro[16][j+3] === 'X' && caro[15][j+4] !== 'O'){
+                    alert('X win')
+                    return 1;
+                }else if(caro[19][j] === 'O' && caro[18][j+1] === 'O' && caro[17][j+2] === 'O' && caro[16][j+3] === 'O' && caro[15][j+4] !== 'X'){
+                    alert('O win')
+                    return 1;
+                }else if(caro[19][j] === 'X' && caro[18][j-1] === 'X' && caro[17][j-2] === 'X' && caro[16][j-3] === 'X' && caro[15][j-4] !== 'O'){
+                    alert('X win')
+                    return 1;
+                }else if(caro[19][j] === 'O' && caro[18][j-1] === 'O' && caro[17][j-2] === 'O' && caro[16][j-3] === 'O' && caro[15][j-4] !== 'X'){
+                    alert('O win')
+                    return 1;
+                }
+            }
+        }
+    }
+
+    function restart(){
+        for(let i=0;i<20;i++){
+            for (let j=0;j<20;j++){
+                caro[i][j]='&nbsp'
+            }
+        }
+        tick='X'
+        bangCaro()
+    }
+</script>
+</body>
+</html>

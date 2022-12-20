@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let numbers=[22,-21.1,-5.1,3,6,-49,12,4,-8,56]
+  let temp
+  let j=0
+  for(let i=0;i<numbers.length;i++){
+    temp=numbers[i]-Math.floor(numbers[i])
+    if(numbers[i]<0&&temp==0){
+      j++
+    }
+  }
+  alert('Số số nguyên âm trong chuỗi là '+j)
+</script>
+</body>
+</html>

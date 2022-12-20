@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  a='2'
+  b='af213123jasi2j2f3a5i7s7jfahguhguhgkdfjghoid'
+  console.log(checkCharacter(a,b))
+  function checkCharacter(a,b){
+    let count=0
+    for(let i=0;i<b.length;i++){
+      if(a===b[i]){
+        count++
+      }
+    }
+    if(count===0){
+      return -1
+    }else {
+      return count
+    }
+  }
+</script>
+</body>
+</html>

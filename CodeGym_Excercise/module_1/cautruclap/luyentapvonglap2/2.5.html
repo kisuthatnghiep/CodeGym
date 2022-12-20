@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let tien=+prompt('Nhập số tiền gửi (VNĐ): ');
+  let soThangVay=+prompt('Nhập số tháng cho vay (tháng): ');
+  let laiSuat=+prompt('Nhập lãi suất (%): ');
+  for(let i=1;i<=soThangVay;i++){
+    tien=tien*(laiSuat/100+1);
+  }
+  document.write('Tổng số tiền sau khi gửi '+soThangVay+' tháng là '+tien+' VNĐ')
+</script>
+</body>
+</html>

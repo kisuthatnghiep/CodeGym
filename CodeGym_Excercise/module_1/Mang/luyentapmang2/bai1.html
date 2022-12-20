@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script>
+    let a=[[1,2,3,4],
+        [5,6,7,8],
+        ['one','two','three','four'],
+        ['five','six','seven','eight']]
+    // let text=''
+    // for(let i=0;i<a.length;i++){
+    //     text+='row '+i+'<br>'
+    //     for(let j=0;j<a[i].length;j++){
+    //         text+=a[i][j]+'<br>'
+    //     }
+    // }
+    // document.write(text)
+    for(var i in a){
+        document.write('row '+i+'<br>')
+        for(var j in a[i]){
+            document.write(a[i][j]+'<br>')
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+<script>
+    let text=''
+    //hình 1
+    for(let i=0;i<=5;i++) {
+        for (let j = 1; j <=i; j++) {
+            text += '*'
+        }
+        for (let k = 5; k > i; k--) {
+            text += '&ensp;'
+        }
+        text += '<br>'
+        console.log(text)
+    }
+    text+='<br>'
+    //hình 2
+    for(let a=0;a<=5;a++) {
+        for (let b = 5; b >a; b--) {
+            text += '*'
+        }
+        for (let c = 1; c <= a; c++) {
+            text += '&ensp;'
+        }
+        text += '<br>'
+        console.log(text)
+    }
+    //hình 3
+    for(let d=0;d<=5;d++) {
+        for (let e = 5; e >d; e--) {
+            text += '&ensp;'
+        }
+        for (let f = 1; f <= d; f++) {
+            text += '*'
+        }
+        text += '<br>'
+        console.log(text)
+    }
+    text+='<br>'
+    //hình 4
+    for(let x=0;x<=5;x++) {
+        for (let y = 1; y <=x; y++) {
+            text += '&ensp;'
+        }
+        for (let z = 5; z > x; z--) {
+            text += '*'
+        }
+        text += '<br>'
+        console.log(text)
+    }
+    document.write(text)
+</script>
+</body>
+</html>

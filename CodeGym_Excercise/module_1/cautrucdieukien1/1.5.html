@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let dktToan=+prompt('Nhập điểm kiểm tra toán: ');
+  let dgkToan=+prompt('Nhập điểm giữa kì toán: ');
+  let dckToan=+prompt('Nhập điểm cuối kì toán: ');
+  dtbToan=(dktToan+dgkToan*2+dckToan*3)/6
+  let dktLy=+prompt('Nhập điểm kiểm tra lý: ');
+  let dgkLy=+prompt('Nhập điểm giữa kì lý: ');
+  let dckLy=+prompt('Nhập điểm cuối kì lý: ');
+  dtbLy=(dktLy+dgkLy*2+dckLy*3)/6
+  let dktHoa=+prompt('Nhập điểm kiểm tra hóa: ');
+  let dgkHoa=+prompt('Nhập điểm giữa kì hóa: ');
+  let dckHoa=+prompt('Nhập điểm cuối kì hóa: ');
+  dtbHoa=(dktHoa+dgkHoa*2+dckHoa*3)/6
+  if(dtbToan+dtbHoa+dtbLy>=8 && dtbToan>=6.5 && dtbHoa>=6.5 && dtbLy>=6.5) {
+      alert('Học sinh đạt học lực giỏi')
+  }else if(dtbToan+dtbHoa+dtbLy>=6.5 && dtbToan>=5 && dtbHoa>=5 && dtbLy>=5) {
+      alert('Học sinh đạt học lực khá')
+  }else if(dtbToan+dtbHoa+dtbLy>=5 && dtbToan>=3.5 && dtbHoa>=3.5 && dtbLy>=3.5) {
+      alert('Học sinh đạt học lực trung bình')
+  }else{
+      alert('Học sinh đat học lực yếu')
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="Sab"></p>
+<script>
+  a=+prompt('Nhập vào giá trị a: ')
+  b=+prompt('Nhập vào giá trị b: ')
+  if(a<b) {
+      let soSoHang = b - a + 1
+      let tong = (b + a) * soSoHang / 2
+      document.getElementById('Sab').innerHTML = 'Tổng các số từ ' + a + ' đến ' + b + ' bằng ' + tong
+  }else{
+      let soSoHang = a - b + 1
+      let tong = (b + a) * soSoHang / 2
+      document.getElementById('Sab').innerHTML = 'Tổng các số từ ' + a + ' đến ' + b + ' bằng ' + tong
+  }
+</script>
+</body>
+</html>

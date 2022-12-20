@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  tienVay=+prompt('Nhập số tiền gửi ban đầu: ');
+  soThang=+prompt('Nhập số tháng cho vay: ');
+  laiSuat=+prompt('lãi suất hàng tháng(%): ');
+  tongNo=tienVay*Math.pow(1+laiSuat/100, soThang);
+  alert('Số tiền nợ ngân hàng là: '+tongNo+' VNĐ')
+</script>
+</body>
+</html>

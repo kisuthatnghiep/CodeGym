@@ -1,0 +1,11 @@
+User{name='Nguyễn Tiến Thành', phoneNumber='0393132888', email=thanh@gmail.com, userName=thanh24, role=USER, wallet=9760000(VNĐ)}
+09/11/2022 09:33:31
+Gear{id=2, name='ASUS ProArt PA248QV-P', brand='Asus', quantity=17, price=5890000.0}, quantity: 3
+Gear{id=1, name='Asus TUF GAMING VG249Q1A', brand='Asus', quantity=17, price=4190000.0}, quantity: 3
+Price: 30240000(VNĐ)
+-------------------------------
+User{name='Nguyễn Tiến Thành', phoneNumber='0393132888', email=thanh@gmail.com, userName=thanh24, role=USER, wallet=1380000(VNĐ)}
+09/11/2022 09:34:41
+Gear{id=1, name='Asus TUF GAMING VG249Q1A', brand='Asus', quantity=15, price=4190000.0}, quantity: 2
+Price: 8380000(VNĐ)
+-------------------------------

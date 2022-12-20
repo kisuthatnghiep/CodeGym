@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .anhdd{
+        width: 600px;
+        height: 150px;
+        margin-left: 300px;
+
+    }
+</style>
+<body>
+<div>
+<img onclick="clicka(0)" class="anhdd" alt="" id="anh0" src="">
+<img onclick="clicka(1)" class="anhdd" alt="" id="anh1" src="">
+<img onclick="clicka(2)" class="anhdd" alt="" id="anh2" src="">
+<img onclick="clicka(3)" class="anhdd" alt="" id="anh3" src="">
+<img onclick="clicka(4)" class="anhdd" alt="" id="anh4" src="">
+</div>
+<script>
+    let rose={
+        ghepAnh:
+            [0,0,0,0,0],
+        id:
+        ['anh0','anh1','anh2','anh3','anh4'],
+        source:
+        [['rosie/rose1-1.png','rosie/rose1-2.png','rosie/rose1-3.png','rosie/rose1-4.png','rosie/rose1-5.png'],
+        ['rosie/rose2-1.png','rosie/rose2-2.png','rosie/rose2-3.png','rosie/rose2-4.png','rosie/rose2-5.png'],
+        ['rosie/rose3-1.png','rosie/rose3-2.png','rosie/rose3-3.png','rosie/rose3-4.png','rosie/rose3-5.png']],
+    }
+    for(let i=0;i<5;i++){
+        rose.ghepAnh[i]=Math.floor(Math.random() * 3);
+        document.getElementById(rose.id[i]).src = rose.source[rose.ghepAnh[i]][i]
+    }
+    function clicka(a){
+        rose.ghepAnh[a]++
+        if (rose.ghepAnh[a]>2){
+            rose.ghepAnh[a] = 0
+        }
+        document.getElementById(rose.id[a]).src = rose.source[rose.ghepAnh[a]][a]
+        if ((rose.ghepAnh[0] == rose.ghepAnh[1]) && (rose.ghepAnh[0] == rose.ghepAnh[2]) && (rose.ghepAnh[0] == rose.ghepAnh[3]) && (rose.ghepAnh[0] == rose.ghepAnh[4])){
+            for (let i = 0; i < 5; i++) {
+                document.getElementById(rose.id[i]).style.boxShadow = '0px 0px 10px green'
+            }
+        } else {
+
+            for (let i = 0; i < 5; i++) {
+                document.getElementById(rose.id[i]).style.boxShadow = '0px 0px 10px black'
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

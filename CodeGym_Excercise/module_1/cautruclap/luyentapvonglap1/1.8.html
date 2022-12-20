@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input onclick="play()" type="button" value="Chơi">
+<script>
+    function play() {
+        let j=0
+        let i
+        let a = +prompt('Nhập giá trị lớn nhất trong khoảng bạn muốn đoán: ');
+        b = Math.floor(Math.random() * a);
+        for (i = 0; i < 3; i++) {
+            let c = +prompt('Nhập số bạn đoán: ');
+
+            if (c == b) {
+                alert('Chúc mừng bạn đã đoán đúng')
+                break;
+            } else if (c > b) {
+                alert('Số bạn đoán có giá trị lớn hơn')
+                j++
+            } else {
+                alert('Số bạn đoán có giá trị nhỏ hơn')
+                j++
+            }
+        }
+        if(j==3){
+            alert('Bạn đã đoán quá số lần')
+        }
+    }
+</script>
+</body>
+</html>

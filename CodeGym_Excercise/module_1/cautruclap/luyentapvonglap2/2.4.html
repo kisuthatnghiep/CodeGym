@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div{line-height: 29%}
+</style>
+<body>
+<div id="hcn"></div>
+<script>
+  let text=''
+  for(let i=1;i<=20;i++){
+    text+='*'
+  }
+  for(let k=1;k<=8;k++) {
+      text += '<br>' + '*'
+      for (let j = 1; j <= 18; j++) {
+          text += '&ensp;'
+      }
+      text += '*' + '<br>'
+  }
+  for(let i=1;i<=20;i++){
+      text+='*'
+  }
+  document.getElementById('hcn').innerHTML=text
+</script>
+</body>
+</html>

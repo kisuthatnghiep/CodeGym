@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  alert('Cho phương trình bậc 2 có dạng ax^2+bx+c=0');
+  a = +prompt('Nhập vào giá trị a: ');
+  b = +prompt('Nhập vào giá trị b: ');
+  c = +prompt('Nhập vào giá trị c: ');
+  let delta=b*b-4*a*c;
+  if(a==0 && b==0 && c==0){
+    alert('Phương trình vô số nghiệm');
+  }else if(a==0 && b==0){
+    alert('Phương trình vô nghiệm')
+  }else if(a==0) {
+    x=-c/b;
+alert('phương trình có nghiệm x = '+x)
+  }else if(delta>0){
+      let canDelta=Math.sqrt(delta)
+  x1=(-b+canDelta)/(2*a);
+    x2=(-b-canDelta)/(2*a);
+    alert('phương trinh có 2 nghiệm x = '+ x1 +' và x= '+x2)
+  }else if( delta == 0 ){
+    x=-b/(2*a)
+    alert('phương trình có nghiệm x = '+x)
+  }else{
+    alert('Phương trình vô nghiệm')
+  }
+
+</script>
+</body>
+</html>

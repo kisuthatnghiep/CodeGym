@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let meters=+prompt('meter = ')
+    let feet=+prompt('foot = ')
+    let result1=meterToFoot(meters)
+    let   result2=footToMeter(feet)
+    document.write(meters+' meters = '+result1+' feet'+'<br>'+feet+' feet = '+result2+' meters')
+    function meterToFoot(meter){
+        return 3.279*meter
+    }
+    function footToMeter(foot) {
+        return 0.305*foot
+    }
+</script>
+</body>
+</html>

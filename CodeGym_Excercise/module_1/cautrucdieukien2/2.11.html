@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  tongLuong=+prompt('Nhập tổng lương nhận được (triệu): ');
+  khoanMienThue=+prompt('Nhập tổng các khoản được miễn thuế (triệu): ');
+  khoanGiamTru=+prompt('Nhập tổng các khoản giảm trừ (triệu): ');
+  let thuNhapTinhThue=tongLuong-khoanMienThue-khoanGiamTru
+  if (thuNhapTinhThue<0){
+    thueTNCN=0;
+  }else if(thuNhapTinhThue<=5){
+  thueTNCN=thuNhapTinhThue*5/100;
+  }else if(thuNhapTinhThue>5&&thuNhapTinhThue<=10){
+    thueTNCN=thuNhapTinhThue*0.1+0.25;
+  }else if(thuNhapTinhThue>10&&thuNhapTinhThue<=18) {
+    thueTNCN = thuNhapTinhThue * 0.15 + 0.75;
+  }else if(thuNhapTinhThue>18&&thuNhapTinhThue<=32) {
+    thueTNCN = thuNhapTinhThue * 0.2 + 1.95;
+  }else if(thuNhapTinhThue>32&&thuNhapTinhThue<=52) {
+    thueTNCN = thuNhapTinhThue * 0.25 + 4.75;
+  }else if(thuNhapTinhThue>52&&thuNhapTinhThue<=80) {
+    thueTNCN = thuNhapTinhThue * 0.3 + 9.75;
+  }else {
+    thueTNCN = thuNhapTinhThue * 0.35 + 18.15;
+  }
+  alert('Thuế thu nhập cá nhân cần phải đóng là: '+thueTNCN+' triệu đồng')
+</script>
+</body>
+</html>

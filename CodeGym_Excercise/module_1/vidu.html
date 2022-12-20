@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>may tinh cam tay</title>
+    <style>
+        button{
+            width: 100%;
+            height: 100%;
+        }
+
+        td{
+            width: 20px;
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <table style="width: 100%">
+        <tr>
+            <th colspan="4">
+                <div id="out"></div>
+            </th>
+        </tr>
+        <tr>
+            <td><button onclick="click1('7')" value="7">7</button></td>
+            <td><button onclick="click1('8')" value="8">8</button></td>
+            <td><button onclick="click1('9')" value="9">9</button></td>
+            <td><button onclick="click1('/')" value="/">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="click1('4')" value="7">4</button></td>
+            <td><button onclick="click1('5')" value="7">5</button></td>
+            <td><button onclick="click1('6')" value="7">6</button></td>
+            <td><button onclick="click1('x')" value="7">x</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="click1('1')" value="7">1</button></td>
+            <td><button onclick="click1('2')" value="7">2</button></td>
+            <td><button onclick="click1('3')" value="7">3</button></td>
+            <td><button onclick="click1('-')" value="7">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="click1('0')" value="7">0</button></td>
+            <td><button onclick="click1('.')" value="7">.</button></td>
+            <td><button onclick="click1('=')" value="7">=</button></td>
+            <td><button onclick="click1('ninh')" value="7">+</button></td>
+        </tr>
+
+    </table>
+</div>
+<script>
+let chuoi = '';
+function click1(a){
+ chuoi += a
+console.log(chuoi)
+document.getElementById('out').innerText = chuoi
+
+
+</script>
+</body>
+</html>

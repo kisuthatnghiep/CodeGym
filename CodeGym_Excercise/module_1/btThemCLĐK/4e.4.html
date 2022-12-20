@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="tamgiac"></p>
+<script>
+    a = +prompt('Nhập gi trị a: ')
+    b = +prompt('Nhập gi trị b: ')
+    c = +prompt('Nhập gi trị c: ')
+    ketqua=false
+    amuHai=Math.pow(a, 2);
+    bmuHai=Math.pow(b, 2);
+    cmuHai=Math.pow(c, 2);
+    if (a > 0 && b > 0 && c > 0) {
+        if (amuHai == (bmuHai + cmuHai)) {
+            ketqua = true
+        } else if (bmuHai == (amuHai + cmuHai)) {
+            ketqua = true
+        } else if (cmuHai == (bmuHai + amuHai)) {
+            ketqua = true
+        }
+    }
+    if(ketqua==true){
+        document.getElementById('tamgiac').innerText = 'a, b, c là độ dài 3 cạnh của tam giác vuông'
+    }else{
+        document.getElementById('tamgiac').innerText = 'a, b, c không phải là độ dài 3 cạnh của tam giác vuông'
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body style="text-align: center">
+<script>let n=''
+let a
+let chuoi='Blackpink in your area!!'
+function arr() {
+    a=document.getElementById('text').value
+    for (var i = 0; i < a.length; i++) {
+        n += chuoi[i]
+        console.log(n)
+        if(i===24){
+            document.getElementById('text').value=''
+            n=''
+        }
+    }
+    document.getElementById('text').value = n
+    n=''
+    setTimeout('arr()', 1);
+}
+</script>
+<h1>Type anything slowly</h1>
+<textarea style="height: 150px;width: 350px" oninput="arr()" id="text"></textarea>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nobita</title>
+</head>
+<body onload="doready()">
+<img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:relative;left:0; top:0;" height="100" width="80">
+<script>
+  function phimlen(){
+    let nobita=document.getElementById('nobita');
+    nobita.style.top=parseInt(nobita.style.top)-5+'px'
+  }
+  function phimxuong() {
+    let nobita = document.getElementById('nobita')
+    nobita.style.top = parseInt(nobita.style.top) + 5 + 'px'
+  }
+    function phimtrai(){
+      let nobita=document.getElementById('nobita')
+      nobita.style.left=parseInt(nobita.style.left)-5+'px'
+
+    }
+function phimphai(){
+    nobita=document.getElementById('nobita')
+  nobita.style.left=parseInt(nobita.style.left)+5+'px'
+}
+function moveselection(evt){
+      switch (evt.keyCode){
+          case 37:
+              phimtrai();
+              break
+          case 38:
+              phimlen();
+              break
+          case 39:
+              phimphai();
+              break
+          case 40:
+              phimxuong();
+              break
+      }
+}
+function doready(){
+      window.addEventListener('keydown',moveselection);
+}
+</script>
+</body>
+</html>
