@@ -16,24 +16,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProvinceController {
     @Autowired
     private IProvinceService provinceService;
+
     @RequestMapping
-    public String index(Model model){
+    public String index(Model model) {
         model.addAttribute("provinces", provinceService.findAll());
         return "/ProvinceList";
     }
+
     @GetMapping("/save")
-    public String openCreateForm(Model model){
+    public String openCreateForm(Model model) {
         model.addAttribute("province", new Province());
         return "/createProvince";
     }
+
     @PostMapping("/save")
-    public String save(Province province){
+    public String save(Province province) {
         provinceService.save(province);
         return "redirect:/province";
     }
+
     @GetMapping("/save/{id}")
-    public String save(@PathVariable Long id, Model model){
+    public String save(@PathVariable Long id, Model model) {
         model.addAttribute("province", provinceService.findById(id));
         return "/createProvince";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+        provinceService.remove(id);
+        return "redirect:/province";
     }
 }

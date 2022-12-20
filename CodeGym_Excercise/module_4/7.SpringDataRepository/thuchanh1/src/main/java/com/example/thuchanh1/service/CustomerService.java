@@ -3,7 +3,8 @@ package com.example.thuchanh1.service;
 import com.example.thuchanh1.model.Customer;
 import com.example.thuchanh1.repository.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -31,5 +32,15 @@ public class CustomerService implements ICustomerService{
     @Override
     public void remove(Long id) {
         customerRepository.deleteById(id);
+    }
+
+    @Override
+    public Page<Customer> findAll(Pageable pageable) {
+        return customerRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Customer> findAllByFirstNameContaining(String firstname, Pageable pageable) {
+        return customerRepository.findCustomerByFirstNameContaining(firstname, pageable);
     }
 }
