@@ -1,4 +1,4 @@
-package com.example.registrationform;
+package com.example.songinfo;
 
 import java.io.*;
 import javax.servlet.http.*;
