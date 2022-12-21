@@ -15,8 +15,18 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2JDTko1mX4uBwO1A52R21q9mqqE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -29,7 +39,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/CodeGym/CodeGym_Excercise/module_4/7.SpringDataRepository/thuchanh1"
+    "last_opened_file_path": "D:/CodeGym/CodeGym_Excercise/module_4/1.SpringMVC/customer-management"
   }
 }]]></component>
   <component name="RunManager">
@@ -64,6 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671611805445</updated>
       <workItem from="1671611806981" duration="221000" />
+      <workItem from="1671613097690" duration="1074000" />
     </task>
     <servers />
   </component>
