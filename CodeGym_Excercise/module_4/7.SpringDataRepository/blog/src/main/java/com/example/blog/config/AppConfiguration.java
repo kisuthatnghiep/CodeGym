@@ -118,7 +118,7 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
     @Override
     public void addFormatters(FormatterRegistry registry) {
         StringToLocalDateConverter stringToLocalDateConverter = new
-                StringToLocalDateConverter("dd/MM/yyyy");
+                StringToLocalDateConverter("MM/dd/yy");
         registry.addConverter(stringToLocalDateConverter);
     }
 }
