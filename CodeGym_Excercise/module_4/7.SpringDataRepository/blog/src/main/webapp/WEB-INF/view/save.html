@@ -11,13 +11,15 @@
     <a th:href="@{/blog}">Back to home</a><br><br>
     <form th:action="@{/blog/save}" method="post" th:object="${blog}">
         <div class="mb-3">
-            <input type="hidden" th:field="*{id}">
+            <input type="hidden" th:field="*{id}" hidden>
+            <input type="text" th:if="*{id != null}" th:field="*{date}" >
+            <input type="text" th:if="*{id == null}" th:field="${dateDefault}" >
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" aria-describedby="emailHelp" th:field="*{name}">
         </div>
-        <div class="mb-3">
-            <label for="content" class="form-label">Content</label>
-            <input type="text" class="form-control" id="content" aria-describedby="emailHelp" th:field="*{content}">
+        <div class="form-floating">
+            <label for="floatingTextarea2">Content</label>
+            <textarea class="form-control" placeholder="Content here" id="floatingTextarea2" th:field="*{content}" style="height: 500px"></textarea>
         </div>
         <button class="btn btn-primary">Submit</button>
     </form>

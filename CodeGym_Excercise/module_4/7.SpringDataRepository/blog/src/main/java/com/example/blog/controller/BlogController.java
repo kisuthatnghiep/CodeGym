@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
@@ -28,18 +25,18 @@ public class BlogController {
     @GetMapping("/save")
     public String openSaveForm(Model model) {
         model.addAttribute("blog", new Blog());
+        model.addAttribute("dateDefault", LocalDate.now());
         return "/save";
     }
 
     @GetMapping("/save/{id}")
     public String openSaveForm(@PathVariable Long id, Model model) {
-        model.addAttribute("blog", blogService.findById(id));
+        model.addAttribute("blog", blogService.findById(id).get());
         return "/save";
     }
 
     @PostMapping("/save")
-    public String save(Blog blog) {
-        blog.setDate(LocalDate.now());
+    public String save(@ModelAttribute("blog") Blog blog) {
         blogService.save(blog);
         return "redirect:/blog";
     }

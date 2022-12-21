@@ -1,16 +1,15 @@
-package com.example.blog.formatter;
+package com.example.blog.converter;
 
-import org.springframework.expression.ParseException;
-import org.springframework.format.Formatter;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 public class StringToLocalDateConverter implements Converter<String, LocalDate> {
-    private String datePattern;
+    private final String datePattern;
 
     public StringToLocalDateConverter(String datePattern) {
         this.datePattern = datePattern;

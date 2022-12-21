@@ -1,7 +1,8 @@
 package com.example.blog.config;
 
 
-import com.example.blog.formatter.StringToLocalDateConverter;
+//import com.example.blog.formatter.StringToLocalDateConverter;
+import com.example.blog.converter.StringToLocalDateConverter;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -114,11 +115,10 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
         return properties;
     }
-
     @Override
     public void addFormatters(FormatterRegistry registry) {
         StringToLocalDateConverter stringToLocalDateConverter = new
-                StringToLocalDateConverter("MM/dd/yyyy");
+                StringToLocalDateConverter("dd/MM/yyyy");
         registry.addConverter(stringToLocalDateConverter);
     }
 }

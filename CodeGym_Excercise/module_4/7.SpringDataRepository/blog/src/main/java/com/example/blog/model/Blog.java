@@ -10,6 +10,7 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Column(columnDefinition = "text")
     private String content;
     private LocalDate date;
 
