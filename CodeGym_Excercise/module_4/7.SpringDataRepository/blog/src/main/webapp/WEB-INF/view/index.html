@@ -8,6 +8,17 @@
 <body>
 <div class="container">
     <h1>BLog List</h1>
+        <form th:action="@{/blog}" method="get">
+    <div class="row">
+        <div class="col col-4">
+            <input type="text" name="search" class="form-control">
+        </div>
+        <div class="col col-2">
+            <button class="btn btn-primary">Search</button>
+        </div>
+        <div class="col col-6"></div>
+    </div>
+        </form>
     <br>
     <a th:href="@{/blog/save}">Create blog</a>
     <br>
@@ -28,6 +39,11 @@
             <td><a class="btn btn-danger" th:href="@{|/blog/delete/*{id}|}">Delete</a></td>
         </tr>
     </table>
+    <div>
+        <a th:href="@{'/blog'(page=${blogs.number - 1})}" th:if="${blogs.hasPrevious()}">Previous</a>
+        <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
+        <a th:href="@{'/blog'(page=${blogs.number + 1})}" th:if="${blogs.hasNext()}">Next</a>
+    </div>
 </div>
 </body>
 </html>

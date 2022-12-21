@@ -3,12 +3,15 @@ package com.example.blog.controller;
 import com.example.blog.model.Blog;
 import com.example.blog.service.IBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/blog")
@@ -17,8 +20,14 @@ public class BlogController {
     private IBlogService blogService;
 
     @GetMapping
-    public String index(Model model, Pageable pageable) {
-        model.addAttribute("blogs", blogService.findAll(pageable));
+    public String index(@RequestParam Optional<String> search, Model model, @PageableDefault(value = 3) Pageable pageable) {
+        Page<Blog> blogs;
+        if (search.isPresent()){
+            blogs = blogService.findBlogByNameContains(search.get(), pageable);
+        }else {
+            blogs = blogService.findAll(pageable);
+        }
+        model.addAttribute("blogs", blogs);
         return "/index";
     }
 
