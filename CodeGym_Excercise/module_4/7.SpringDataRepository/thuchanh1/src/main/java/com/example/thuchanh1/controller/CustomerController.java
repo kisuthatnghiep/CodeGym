@@ -7,6 +7,7 @@ import com.example.thuchanh1.service.IProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -39,7 +40,7 @@ public class CustomerController {
     }
 
     @GetMapping
-    public String listCustomers(@RequestParam Optional<String> search, Model model, Pageable pageable) {
+    public String listCustomers(@RequestParam Optional<String> search, Model model,@PageableDefault(value = 5) Pageable pageable) {
         Page<Customer> customers;
         if (search.isPresent()) {
             customers = customerService.findAllByFirstNameContaining(search.get(), pageable);
