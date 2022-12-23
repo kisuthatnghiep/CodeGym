@@ -21,6 +21,10 @@ public class Song {
     @Transient
     private MultipartFile soundFile;
 
+
+    public Song() {
+    }
+
     public Song(Long id, String name, String singer, LocalDate localDate, Category category, String sound, MultipartFile soundFile) {
         this.id = id;
         this.name = name;
@@ -29,9 +33,6 @@ public class Song {
         this.category = category;
         this.sound = sound;
         this.soundFile = soundFile;
-    }
-
-    public Song() {
     }
 
     public Long getId() {

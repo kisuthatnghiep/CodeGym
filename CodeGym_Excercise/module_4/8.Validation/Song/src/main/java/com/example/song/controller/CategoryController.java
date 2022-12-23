@@ -27,7 +27,7 @@ public class CategoryController {
 
     @GetMapping("/save/{id}")
     public String openEditForm(@PathVariable Long id, Model model) {
-        model.addAttribute("category", categoryService.findById(id));
+        model.addAttribute("category", categoryService.findById(id).get());
         return "/categorySave";
     }
 

@@ -6,6 +6,52 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-
+<div class="container">
+<h1>Song List</h1>
+<br>
+    <form th:action="@{/song}" method="get">
+        <div class="row">
+            <div class="col col-4">
+                <input type="text" name="search" class="form-control">
+            </div>
+            <div class="col col-2">
+                <button class="btn btn-primary">Search</button>
+            </div>
+            <div class="col col-6"></div>
+        </div>
+    </form>
+    <br>
+<a th:href="@{/song/create}">Create Song</a><br>
+<a th:href="@{/category}">Category List</a><br>
+<table class="table table-striped">
+    <tr>
+        <th>Song No</th>
+        <th>Song Name</th>
+        <th>Singer</th>
+        <th>Date</th>
+        <th>Category</th>
+        <th style="text-align: center">Sound</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr th:each="s,No: ${songs}" th:object="${s}">
+        <td th:text="${No.count}"></td>
+        <td th:text="*{name}"></td>
+        <td th:text="*{singer}"></td>
+        <td th:text="*{localDate}"></td>
+        <td th:text="*{category.name}"></td>
+        <td><audio controls>
+            <source th:src="@{'/audio/' + ${s.sound}}">
+        </audio></td>
+        <td><a th:href="@{|/song/save/*{id}|}" class="btn btn-warning">Update</a></td>
+        <td><a th:href="@{|/song/delete/*{id}|}" class="btn btn-danger">Delete</a></td>
+    </tr>
+</table>
+    <div>
+        <a th:href="@{/song(page=${songs.number - 1},search=${search})}" th:if="${songs.hasPrevious()}">Previous</a>
+        <span th:text="${songs.number + 1}"></span>/<span th:text="${songs.totalPages}"></span>
+        <a th:href="@{/song(page=${songs.number + 1},search=${search})}" th:if="${songs.hasNext()}">Next</a>
+    </div>
+</div>
 </body>
 </html>

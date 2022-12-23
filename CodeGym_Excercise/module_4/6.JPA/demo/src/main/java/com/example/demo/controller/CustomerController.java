@@ -2,7 +2,9 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Customer;
 import com.example.demo.service.CustomerService;
+import com.example.demo.service.DuplicateEmailException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,15 +25,19 @@ public class CustomerController {
     }
 
     @PostMapping("/create-customer")
-    public ModelAndView saveCustomer(Customer customer) {
+    public ModelAndView saveCustomer(Customer customer) throws DuplicateEmailException {
         customerService.save(customer);
-        ModelAndView modelAndView = new ModelAndView("/create");
+        ModelAndView modelAndView = new ModelAndView("redirect:/customer");
         if (customer.getId() == null) {
             modelAndView.addObject("message", "New customer created successfully");
         }else {
             modelAndView.addObject("message", "Change information successfully");
         }
         return modelAndView;
+    }
+    @ExceptionHandler(DuplicateEmailException.class)
+    public ModelAndView notAccept(){
+        return new ModelAndView("/inputNotException");
     }
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView listCustomers() {

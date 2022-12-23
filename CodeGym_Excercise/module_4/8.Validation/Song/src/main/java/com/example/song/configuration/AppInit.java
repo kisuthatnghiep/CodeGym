@@ -33,4 +33,5 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
         filterRegistration.addMappingForUrlPatterns(null, false, "/*");
         super.onStartup(servletContext);
     }
+
 }

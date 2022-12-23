@@ -9,6 +9,7 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
+    @Column(unique = true)
     private String lastName;
 
     public Customer(Long id, String firstName, String lastName) {
