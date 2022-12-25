@@ -1,4 +1,4 @@
-package com.example.cart.configuration;
+package com.example.productcart.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
