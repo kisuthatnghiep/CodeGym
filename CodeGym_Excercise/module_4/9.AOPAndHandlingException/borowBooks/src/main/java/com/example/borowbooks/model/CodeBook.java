@@ -1,6 +1,7 @@
 package com.example.borowbooks.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 public class CodeBook {
@@ -8,13 +9,23 @@ public class CodeBook {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String code;
+    private LocalDate dateBorrow;
+    private LocalDate dateReturn;
     @ManyToOne
     @JoinColumn(name = "book_id")
     private Book book;
 
-    public CodeBook(Long id, String code, Book book) {
+    public CodeBook(Long id, String code, LocalDate dateBorrow, LocalDate dateReturn, Book book) {
         this.id = id;
         this.code = code;
+        this.dateBorrow = dateBorrow;
+        this.dateReturn = dateReturn;
+        this.book = book;
+    }
+
+    public CodeBook(LocalDate dateBorrow, String code, Book book) {
+        this.code = code;
+        this.dateBorrow = dateBorrow;
         this.book = book;
     }
 
@@ -37,6 +48,22 @@ public class CodeBook {
         this.code = code;
     }
 
+    public LocalDate getDateBorrow() {
+        return dateBorrow;
+    }
+
+    public void setDateBorrow(LocalDate dateBorrow) {
+        this.dateBorrow = dateBorrow;
+    }
+
+    public LocalDate getDateReturn() {
+        return dateReturn;
+    }
+
+    public void setDateReturn(LocalDate dateReturn) {
+        this.dateReturn = dateReturn;
+    }
+
     public Book getBook() {
         return book;
     }
@@ -44,4 +71,6 @@ public class CodeBook {
     public void setBook(Book book) {
         this.book = book;
     }
+
+
 }
