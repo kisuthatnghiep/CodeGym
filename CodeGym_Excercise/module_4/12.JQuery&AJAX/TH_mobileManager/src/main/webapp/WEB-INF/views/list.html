@@ -5,6 +5,7 @@
     <title>Title</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
+        let idUpdate;
         function addNewSmartPhone() {
             let producer = $('#producer').val();
             let model = $('#model').val();
@@ -43,7 +44,8 @@
 
         function getSmartphone(smartphone) {
             return `<tr><td>${smartphone.producer}</td><td>${smartphone.model}</td><td>${smartphone.price}</td>` +
-                `<td><button class="deleteSmartphone" onclick="deleteSmartphone(${smartphone.id})">Delete</button></td></tr>`;
+                `<td><button onclick="deleteSmartphone(${smartphone.id})">Delete</button></td>` +
+                `<td><button onclick="updatePhones(${smartphone.id})">Update</button></td></tr>`;
         }
 
         function successHandler() {
@@ -67,6 +69,50 @@
                 }
             });
         }
+
+        function updatePhones(id) {
+            idUpdate = id
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/smartphones/" + id,
+                success: function (data) {
+                    $("#producer1").val(data.producer)
+                    $("#model1").val(data.model)
+                    $("#price1").val(data.price)
+                    document.getElementById("update").hidden = false
+                }
+            });
+        }
+
+        function update() {
+            let producer = $("#producer1").val()
+            let model = $("#model1").val()
+            let price = $("#price1").val()
+            let newPhone = {
+                id: idUpdate,
+                producer: producer,
+                model: model,
+                price: price
+            }
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "PUT",
+                url: "http://localhost:8080/smartphones/" + idUpdate,
+                data: JSON.stringify(newPhone),
+                success: function (data) {
+                    successHandler()
+                    if (data.name != null) {
+                        alert("Thay đổi thành công!")
+                    }
+                    document.getElementById("update").hidden = true
+                }
+            })
+            event.preventDefault();
+        }
+
     </script>
 </head>
 <body>
@@ -107,8 +153,36 @@
             <td>
                 <button th:onclick="|deleteSmartphone(${smartphone.id})|">Delete</button>
             </td>
+            <td>
+                <button th:onclick="|updatePhones(${smartphone.id})|">Update</button>
+            </td>
         </tr>
     </th:block>
 </table>
+
+<div id="update" hidden>
+    <form>
+        <h1>Update form</h1>
+        <table>
+            <tr>
+                <td>Producer</td>
+                <td><label><input type="text" id="producer1"></label></td>
+            </tr>
+            <tr>
+                <td>Model</td>
+                <td><label><input type="text" id="model1"></label></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><label><input type="text" id="price1"></label></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="update()">Update</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
 </body>
 </html>
