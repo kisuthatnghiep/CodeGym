@@ -36,6 +36,17 @@ public class CategoryController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         categoryService.remove(id);
-        return new ResponseEntity<>("Delete category successfully!", HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>("Delete category successfully!", HttpStatus.CREATED);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateCategory(@PathVariable Long id, @RequestBody Category category) {
+        Optional<Category> categoryOptional = categoryService.findById(id);
+        if (!categoryOptional.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        category.setId(categoryOptional.get().getId());
+        categoryService.save(category);
+        return new ResponseEntity<>("Update successfully!", HttpStatus.OK);
     }
 }
