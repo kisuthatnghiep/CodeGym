@@ -36,7 +36,7 @@ public class CategoryController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         categoryService.remove(id);
-        return new ResponseEntity<>("Delete category successfully!", HttpStatus.CREATED);
+        return new ResponseEntity<>("Delete category successfully!", HttpStatus.NO_CONTENT);
     }
 
     @PutMapping("/{id}")
@@ -48,5 +48,10 @@ public class CategoryController {
         category.setId(categoryOptional.get().getId());
         categoryService.save(category);
         return new ResponseEntity<>("Update successfully!", HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Category> findOne(@PathVariable Long id){
+        return new ResponseEntity<>(categoryService.findById(id).get(), HttpStatus.OK);
     }
 }

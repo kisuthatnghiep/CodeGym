@@ -1,0 +1,150 @@
+function displayProduct(product) {
+    return `<td>${product.name}</td>
+            <td>${product.price}</td>
+            <td>${product.quantity}</td>
+            <td>${product.category.name}</td>
+            <td><button class="btn btn-danger" onclick="deleteProduct(${product.id})">Delete</button></td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalUpdateProduct" onclick="getDataInUpdateForm(${product.id})">Update</button></td>`;
+}
+
+function getAllProduct() {
+    $.ajax(
+        {
+            type: "GET",
+            url: "http://localhost:8080/product",
+            success: function (a) {
+                getAllCategory(a[1]);
+                let content = `<table class="table table-striped"><tr>
+                                <th>Product No</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Category</th>
+                                <th></th><th></th></tr>`
+                for (let i = 0; i < a[0].length; i++) {
+                    content += `<tr>`
+                    content += `<td>${i + 1}</td>`
+                    content += displayProduct(a[0][i])
+                    content += `</tr>`
+                }
+                content += `</table>`
+                document.getElementById(`product_list`).innerHTML = content;
+            }
+        }
+    );
+}
+
+function createProduct() {
+    let name = $("#name").val()
+    let price = $("#price").val()
+    let quantity = $("#quantity").val()
+    let category = $("#category").val()
+    let newProduct = {
+        name: name,
+        price: price,
+        quantity: quantity,
+        category: {
+            id: category
+        }
+    }
+    $.ajax({
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        type: "POST",
+        url: "http://localhost:8080/product",
+        data: JSON.stringify(newProduct),
+        dataType: "text",
+        success: function (data) {
+            document.getElementById("name").value = ""
+            getAllProduct()
+            $('#modalCreateProduct').modal('hide');
+            alert("Create Successfully!")
+        }
+    })
+    event.preventDefault();
+}
+
+function deleteProduct(id) {
+    if (confirm(`Are you sure want to delete this product?`)) {
+        $.ajax({
+            type: "DELETE",
+            url: "http://localhost:8080/product/" + id,
+            success: function () {
+                getAllProduct()
+                alert('Delete successfully')
+            }
+        })
+    }
+}
+
+let idUpdate;
+
+function getDataInUpdateForm(id) {
+    idUpdate = id
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:8080/product/" + id,
+        success: function (data) {
+            $("#name_update").val(data.name)
+            $("#price_update").val(data.price)
+            $("#quantity_update").val(data.quantity)
+            $("#category_update").val(data.category.id)
+        }
+    });
+}
+
+function updateProduct(id) {
+    let name = $("#name_update").val();
+    let price = $("#price_update").val();
+    let quantity = $("#quantity_update").val();
+    let category = $("#category_update").val();
+    let newProduct = {
+        id: idUpdate,
+        name: name,
+        price: price,
+        quantity: quantity,
+        category: {
+            id: category
+        },
+    }
+    $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "PUT",
+            url: "http://localhost:8080/product/" + id,
+            data: JSON.stringify(newProduct),
+            dataType: "text",
+            success: function (data) {
+                getAllProduct()
+                $('#modalUpdateProduct').modal('hide');
+                alert(data)
+            }
+        }
+    )
+    event.preventDefault();
+}
+
+function getAllCategory(category) {
+    let content = `<label for="category" class="form-label">Category</label>
+                    <select id="category" class="form-select" aria-label="Default select example">`
+    for (let i = 0; i < category.length; i++) {
+        content += `<option value="${category[i].id}">${category[i].name}</option>`
+    }
+    content += `</select>`
+    document.getElementById("category_list").innerHTML = content;
+    console.log(content)
+
+
+    let content1 = `<label for="category_update" class="form-label">Category</label>
+                    <select id="category_update" class="form-select" aria-label="Default select example">`
+    for (let i = 0; i < category.length; i++) {
+        content1 += `<option value="${category[i].id}">${category[i].name}</option>`
+    }
+    content1 += `</select>`
+    document.getElementById("category_list1").innerHTML = content1;
+    console.log(content1)
+}
