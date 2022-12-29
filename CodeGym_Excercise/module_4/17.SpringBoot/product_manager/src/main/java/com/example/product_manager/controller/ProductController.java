@@ -15,29 +15,39 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/product")
+@RequestMapping("/products")
 public class ProductController {
     @Autowired
     private IProductService productService;
     @Autowired
-    private ICategoryService CategoryService;
+    private ICategoryService categoryService;
     @GetMapping
-    public ResponseEntity<Object> index(@RequestParam Optional<String> search){
-        if (search.isPresent()){
-            List<Product> productList =(List<Product>)productService.search(search.get());
-            if (productList.isEmpty()){
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
-            return new ResponseEntity<>(productList, HttpStatus.OK);
-        }
+    public ResponseEntity<Object> index(){
         List<Product> products =(List<Product>) productService.findAll();
-        List<Category> categories =(List<Category>) CategoryService.findAll();
+        List<Category> categories =(List<Category>) categoryService.findAll();
         List<Object> objects = new ArrayList<>();
         objects.add(products);
         objects.add(categories);
         if (products.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
+        return new ResponseEntity<>(objects, HttpStatus.OK);
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<Object> searchProduct(@RequestParam("q") Optional<String> q){
+        List<Object> objects = new ArrayList<>();
+        if (q.isPresent()){
+            List<Product> productList =(List<Product>)productService.search(q.get());
+            objects.add(productList);
+            objects.add(categoryService.findAll());
+            if (productList.isEmpty()){
+                return new ResponseEntity<>(objects, HttpStatus.NOT_FOUND);
+            }
+            return new ResponseEntity<>(objects, HttpStatus.OK);
+        }
+        objects.add(productService.findAll());
+        objects.add(categoryService.findAll());
         return new ResponseEntity<>(objects, HttpStatus.OK);
     }
     @PostMapping

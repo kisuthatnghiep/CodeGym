@@ -10,6 +10,79 @@
         th,td{
             text-align: center;
         }
+        .but{
+            padding: 0;
+            width: 10.66%;
+        }
+        .input_search{
+            width: 31%;
+        }
+        .list{
+            display: grid;
+            grid-template-columns: 300px 300px 300px;
+            column-gap: 20px;
+        }
+        .item .img img{
+            height:200px;
+            transition: 0.5s;
+        }
+        .item .img{
+            background-image: linear-gradient(to top right,
+            #D89CD1, #D499D4
+            );
+            padding:20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+        }
+        .item .content{
+            background-color: #ffffff24;
+            border-radius: 30px;
+            padding:50px 30px;
+            transform: translate(0,-50px);
+            backdrop-filter: blur(20px);
+            color:#fff;
+        }
+        .title{
+            font-size: x-large;
+        }
+        .item .content .des{
+            opacity: .7;
+            margin:10px 0;
+        }
+        .item .content .price{
+            font-size: large;
+            letter-spacing: 3px;
+            margin-bottom:10px;
+        }
+        .item .content .add{
+            background-color: #B192EF;
+            padding:20px;
+            color:#fff;
+            width:100%;
+            border:none;
+            border-radius: 30px;
+        }
+        .item:hover img{
+            transform: translate(0,-50px);
+        }
+        .listPage{
+            padding:10px;
+            text-align: center;
+            list-style: none;
+        }
+        .listPage li{
+            background-color: rgba(122, 109, 109, 0.74);
+            padding:20px;
+            display: inline-block;
+            margin:0 10px;
+            cursor: pointer;
+        }
+        .listPage .active{
+            background-color: #B192EF;
+            color:#fff;
+        }
     </style>
     <script src="product.js"></script>
 </head>
@@ -17,18 +90,24 @@
 <div class="container">
     <h1>Product List</h1>
     <div class="row">
-        <div class="col-8">
+        <div class="col-2 but">
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreateProduct">Create Product</button>
         </div>
-        <div class="col-3">
-            <input type="text" class="form-control" name="price">
+        <div class="col-6">
+    <a href="categoryIndex.html" class="btn btn-primary">Category List</a>
+        </div>
+        <div class="col-3 input_search">
+            <input type="text" class="form-control " id="search">
         </div>
         <div class="col-1">
-            <button class="btn btn-primary" onclick="getAllProduct()">Search</button>
+            <button class="btn btn-primary" onclick="searchProduct()">Search</button>
         </div>
     </div>
     <br>
     <div id="product_list"></div>
+    <ul class="listPage">
+
+    </ul>
 </div>
 
 <!-- Modal Create-->

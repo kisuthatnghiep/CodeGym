@@ -11,7 +11,37 @@ function getAllProduct() {
     $.ajax(
         {
             type: "GET",
-            url: "http://localhost:8080/product",
+            url: "http://localhost:8080/products",
+            success: function (a) {
+                getAllCategory(a[1]);
+                let content = `<table class="table table-striped"><tr>
+                                <th>Product No</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Category</th>
+                                <th></th><th></th></tr>`
+                for (let i = 0; i < a[0].length; i++) {
+                    content += `<tr class="paging">`
+                    content += `<td>${i + 1}</td>`
+                    content += displayProduct(a[0][i])
+                    content += `</tr>`
+                }
+                content += `</table>`
+                document.getElementById(`product_list`).innerHTML = content;
+            }
+        }
+    );
+                list = document.querySelectorAll('.paging')
+                loadItem();
+}
+
+function searchProduct() {
+    let s = $("#search").val();
+    $.ajax(
+        {
+            type: "GET",
+            url: "http://localhost:8080/products/search?q=" + s,
             success: function (a) {
                 getAllCategory(a[1]);
                 let content = `<table class="table table-striped"><tr>
@@ -53,7 +83,7 @@ function createProduct() {
             'Content-Type': 'application/json'
         },
         type: "POST",
-        url: "http://localhost:8080/product",
+        url: "http://localhost:8080/products",
         data: JSON.stringify(newProduct),
         dataType: "text",
         success: function (data) {
@@ -70,7 +100,7 @@ function deleteProduct(id) {
     if (confirm(`Are you sure want to delete this product?`)) {
         $.ajax({
             type: "DELETE",
-            url: "http://localhost:8080/product/" + id,
+            url: "http://localhost:8080/products/" + id,
             success: function () {
                 getAllProduct()
                 alert('Delete successfully')
@@ -85,7 +115,7 @@ function getDataInUpdateForm(id) {
     idUpdate = id
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/product/" + id,
+        url: "http://localhost:8080/products/" + id,
         success: function (data) {
             $("#name_update").val(data.name)
             $("#price_update").val(data.price)
@@ -115,7 +145,7 @@ function updateProduct(id) {
                 'Content-Type': 'application/json'
             },
             type: "PUT",
-            url: "http://localhost:8080/product/" + id,
+            url: "http://localhost:8080/products/" + id,
             data: JSON.stringify(newProduct),
             dataType: "text",
             success: function (data) {
@@ -147,4 +177,54 @@ function getAllCategory(category) {
     content1 += `</select>`
     document.getElementById("category_list1").innerHTML = content1;
     console.log(content1)
+}
+// pagination
+let thisPage = 1;
+let limit = 2;
+let list;
+
+function loadItem(){
+    let beginGet = limit * (thisPage - 1);
+    let endGet = limit * thisPage - 1;
+    list.forEach((item, key)=>{
+        if(key >= beginGet && key <= endGet){
+            item.style.display = 'block';
+        }else{
+            item.style.display = 'none';
+        }
+    })
+    listPage();
+}
+
+function listPage(){
+    let count = Math.ceil(list.length / limit);
+    document.querySelector('.listPage').innerHTML = '';
+
+    if(thisPage !== 1){
+        let prev = document.createElement('li');
+        prev.innerText = 'PREV';
+        prev.setAttribute('onclick', "changePage(" + (thisPage - 1) + ")");
+        document.querySelector('.listPage').appendChild(prev);
+    }
+
+    for(i = 1; i <= count; i++){
+        let newPage = document.createElement('li');
+        newPage.innerText = i;
+        if(i === thisPage){
+            newPage.classList.add('active');
+        }
+        newPage.setAttribute('onclick', "changePage(" + i + ")");
+        document.querySelector('.listPage').appendChild(newPage);
+    }
+
+    if(thisPage !== count){
+        let next = document.createElement('li');
+        next.innerText = 'NEXT';
+        next.setAttribute('onclick', "changePage(" + (thisPage + 1) + ")");
+        document.querySelector('.listPage').appendChild(next);
+    }
+}
+function changePage(i){
+    thisPage = i;
+    loadItem();
 }
