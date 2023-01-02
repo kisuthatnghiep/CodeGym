@@ -7,6 +7,8 @@ function displayProduct(product) {
             <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalUpdateProduct" onclick="getDataInUpdateForm(${product.id})">Update</button></td>`;
 }
 
+let contentIndex = "";
+
 function getAllProduct() {
     $.ajax(
         {
@@ -14,7 +16,7 @@ function getAllProduct() {
             url: "http://localhost:8080/products",
             success: function (a) {
                 getAllCategory(a[1]);
-                let content = `<table class="table table-striped"><tr>
+                contentIndex = `<table class="table table-striped"><tr>
                                 <th>Product No</th>
                                 <th>Product Name</th>
                                 <th>Price</th>
@@ -22,20 +24,19 @@ function getAllProduct() {
                                 <th>Category</th>
                                 <th></th><th></th></tr>`
                 for (let i = 0; i < a[0].length; i++) {
-                    content += `<tr class="paging">`
-                    content += `<td>${i + 1}</td>`
-                    content += displayProduct(a[0][i])
-                    content += `</tr>`
+                    contentIndex += `<tr class="paging">`
+                    contentIndex += `<td>${i + 1}</td>`
+                    contentIndex += displayProduct(a[0][i])
+                    contentIndex += `</tr>`
                 }
-                content += `</table>`
-                document.getElementById(`product_list`).innerHTML = content;
-            }
+                contentIndex += `</table>`
+                document.getElementById(`product_list`).innerHTML = contentIndex;
+        list = document.getElementsByClassName('paging');
+        loadItem();
         }
+            }
     );
-                list = document.querySelectorAll('.paging')
-                loadItem();
 }
-
 function searchProduct() {
     let s = $("#search").val();
     $.ajax(
@@ -166,7 +167,6 @@ function getAllCategory(category) {
     }
     content += `</select>`
     document.getElementById("category_list").innerHTML = content;
-    console.log(content)
 
 
     let content1 = `<label for="category_update" class="form-label">Category</label>
@@ -176,55 +176,56 @@ function getAllCategory(category) {
     }
     content1 += `</select>`
     document.getElementById("category_list1").innerHTML = content1;
-    console.log(content1)
 }
+
 // pagination
 let thisPage = 1;
 let limit = 2;
-let list;
+let list = [];
 
-function loadItem(){
+function loadItem() {
     let beginGet = limit * (thisPage - 1);
     let endGet = limit * thisPage - 1;
-    list.forEach((item, key)=>{
-        if(key >= beginGet && key <= endGet){
-            item.style.display = 'block';
-        }else{
-            item.style.display = 'none';
+    for (let i = 0; i < list.length; i++){
+        if (i >= beginGet && i <= endGet) {
+            list[i].style.display = 'table-row';
+        } else {
+            list[i].style.display = 'none';
         }
-    })
+    }
     listPage();
 }
 
-function listPage(){
+function listPage() {
     let count = Math.ceil(list.length / limit);
     document.querySelector('.listPage').innerHTML = '';
 
-    if(thisPage !== 1){
+    if (thisPage !== 1) {
         let prev = document.createElement('li');
         prev.innerText = 'PREV';
         prev.setAttribute('onclick', "changePage(" + (thisPage - 1) + ")");
         document.querySelector('.listPage').appendChild(prev);
     }
 
-    for(i = 1; i <= count; i++){
+    for ( i = 1; i <= count; i++) {
         let newPage = document.createElement('li');
         newPage.innerText = i;
-        if(i === thisPage){
+        if (i === thisPage) {
             newPage.classList.add('active');
         }
         newPage.setAttribute('onclick', "changePage(" + i + ")");
         document.querySelector('.listPage').appendChild(newPage);
     }
 
-    if(thisPage !== count){
+    if (thisPage !== count) {
         let next = document.createElement('li');
         next.innerText = 'NEXT';
         next.setAttribute('onclick', "changePage(" + (thisPage + 1) + ")");
         document.querySelector('.listPage').appendChild(next);
     }
 }
-function changePage(i){
+
+function changePage(i) {
     thisPage = i;
     loadItem();
 }
