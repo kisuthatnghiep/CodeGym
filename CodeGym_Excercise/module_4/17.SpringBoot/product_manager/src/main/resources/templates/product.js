@@ -99,9 +99,10 @@ function createProduct() {
         url: "http://localhost:8080/products",
         data: formData,
         success: function (data) {
-            document.getElementById("name").value = ""
-            document.getElementById("price").value = ""
-            document.getElementById("quantity").value = ""
+            $("#name").val("")
+            $("#price").val("")
+            $("#quantity").val("")
+            $("#file").val("")
             getAllProduct()
             $('#modalCreateProduct').modal('hide');
             Swal.fire('Successfully!', '', 'success')
@@ -168,17 +169,24 @@ function updateProduct(id) {
         category: {
             id: category
         },
+        img: ""
     }
+    let formData = new FormData();
+    formData.append("file", $('#file_update')[0].files[0])
+    formData.append("product", new Blob([JSON.stringify(newProduct)]
+        , {type: 'application/json'}))
     $.ajax({
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                // 'Accept': 'application/json',
+                // 'Content-Type': 'application/json'
             },
+        processData: false,
+        contentType: false,
+        enctype: "multipart/form-data",
             type: "PUT",
             url: "http://localhost:8080/products/" + id,
-            data: JSON.stringify(newProduct),
-            dataType: "text",
-            success: function (data) {
+            data: formData,
+            success: function () {
                 getAllProduct()
                 $('#modalUpdateProduct').modal('hide');
                 Swal.fire('Changed!', '', 'success')

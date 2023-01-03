@@ -62,19 +62,9 @@ public class ProductController {
         objects.add(categoryService.findAll());
         return new ResponseEntity<>(objects, HttpStatus.OK);
     }
-    @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    @PostMapping
     public ResponseEntity<String> create(@RequestPart("product") Product product, @RequestPart(value = "file", required = false) MultipartFile file){
-        if (file != null) {
-            String fileName = file.getOriginalFilename();
-            try {
-                FileCopyUtils.copy(file.getBytes(), new File(link + fileName));
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-            product.setImg(displayLink + fileName);
-        } else {
-            product.setImg(displayLink + "avatar.jpg");
-        }
+        uploadFile(product, file);
         productService.save(product);
         return new ResponseEntity<>("Create product successfully!", HttpStatus.CREATED);
     }
@@ -89,10 +79,14 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateProduct(@PathVariable Long id, @RequestBody Product product) {
+    public ResponseEntity<String> updateProduct(@PathVariable Long id, @RequestPart("product") Product product, @RequestPart(value = "file", required = false) MultipartFile file) {
         Optional<Product> productOptional = productService.findById(id);
         if (!productOptional.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        uploadFile(product, file);
+        if (product.getImg() == null){
+            product.setImg(productOptional.get().getImg());
         }
         product.setId(productOptional.get().getId());
         productService.save(product);
@@ -101,5 +95,19 @@ public class ProductController {
     @GetMapping("/{id}")
     public ResponseEntity<Product> findOne(@PathVariable Long id){
         return new ResponseEntity<>(productService.findById(id).get(), HttpStatus.OK);
+    }
+
+    private void uploadFile(Product product, MultipartFile file){
+        if (file != null) {
+            String fileName = file.getOriginalFilename();
+            try {
+                FileCopyUtils.copy(file.getBytes(), new File(link + fileName));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            product.setImg(displayLink + fileName);
+        } else {
+            product.setImg(displayLink + "iphone.jpg");
+        }
     }
 }
