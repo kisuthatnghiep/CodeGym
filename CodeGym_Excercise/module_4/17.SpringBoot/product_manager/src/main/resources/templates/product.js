@@ -3,6 +3,7 @@ function displayProduct(product) {
             <td>${product.price}</td>
             <td>${product.quantity}</td>
             <td>${product.category.name}</td>
+            <td><img src="${product.img}" alt=""></td>
             <td><button class="btn btn-danger" onclick="deleteProduct(${product.id})">Delete</button></td>
             <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalUpdateProduct" onclick="getDataInUpdateForm(${product.id})">Update</button></td>`;
 }
@@ -22,6 +23,7 @@ function getAllProduct() {
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Category</th>
+                                <th>Image</th>
                                 <th></th><th></th></tr>`
                 for (let i = 0; i < a[0].length; i++) {
                     contentIndex += `<tr class="paging">`
@@ -53,13 +55,15 @@ function searchProduct() {
                                 <th>Category</th>
                                 <th></th><th></th></tr>`
                 for (let i = 0; i < a[0].length; i++) {
-                    content += `<tr>`
+                    content += `<tr class="paging">`
                     content += `<td>${i + 1}</td>`
                     content += displayProduct(a[0][i])
                     content += `</tr>`
                 }
                 content += `</table>`
                 document.getElementById(`product_list`).innerHTML = content;
+                list = document.getElementsByClassName('paging');
+                loadItem();
             }
         }
     );
@@ -70,44 +74,69 @@ function createProduct() {
     let price = $("#price").val()
     let quantity = $("#quantity").val()
     let category = $("#category").val()
-    let newProduct = {
+    let newProduct = {  
         name: name,
         price: price,
         quantity: quantity,
         category: {
             id: category
-        }
+        },
+        img: ""
     }
+    let formData = new FormData();
+    formData.append("file", $('#file')[0].files[0])
+    formData.append("product", new Blob([JSON.stringify(newProduct)]
+        , {type: 'application/json'}))
     $.ajax({
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            // 'Accept': 'application/json',
+            // 'Content-Type': 'application/json'
         },
+        processData: false,
+        contentType: false,
+        enctype: "multipart/form-data",
         type: "POST",
         url: "http://localhost:8080/products",
-        data: JSON.stringify(newProduct),
-        dataType: "text",
+        data: formData,
         success: function (data) {
             document.getElementById("name").value = ""
+            document.getElementById("price").value = ""
+            document.getElementById("quantity").value = ""
             getAllProduct()
             $('#modalCreateProduct').modal('hide');
-            alert("Create Successfully!")
+            Swal.fire('Successfully!', '', 'success')
         }
     })
     event.preventDefault();
 }
 
 function deleteProduct(id) {
-    if (confirm(`Are you sure want to delete this product?`)) {
-        $.ajax({
-            type: "DELETE",
-            url: "http://localhost:8080/products/" + id,
-            success: function () {
-                getAllProduct()
-                alert('Delete successfully')
-            }
-        })
-    }
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "DELETE",
+                url: "http://localhost:8080/products/" + id,
+                success: function () {
+                    getAllProduct()
+
+                }
+            })
+            Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+            )
+
+        }
+    })
 }
 
 let idUpdate;
@@ -152,7 +181,7 @@ function updateProduct(id) {
             success: function (data) {
                 getAllProduct()
                 $('#modalUpdateProduct').modal('hide');
-                alert(data)
+                Swal.fire('Changed!', '', 'success')
             }
         }
     )
@@ -180,7 +209,7 @@ function getAllCategory(category) {
 
 // pagination
 let thisPage = 1;
-let limit = 2;
+let limit = 5;
 let list = [];
 
 function loadItem() {

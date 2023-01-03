@@ -33,10 +33,12 @@
             background-color: #B192EF;
             color:#fff;
         }
-        /*.paging{*/
-        /*    display: block!important;*/
-        /*}*/
+        img {
+            width: 100px;
+            height: 100px;
+        }
     </style>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="product.js"></script>
 </head>
 <body onload="getAllProduct()">
@@ -87,6 +89,10 @@
                     </div>
                     <div class="mb-3" id="category_list">
                     </div>
+                    <div>
+                        <label for="file" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="file">
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -118,6 +124,10 @@
                         <input type="text" class="form-control" id="quantity_update">
                     </div>
                     <div class="mb-3" id="category_list1">
+                    </div>
+                    <div>
+                        <label for="img_update" class="form-label">Image</label><br>
+                        <input type="file" id="img_update">
                     </div>
                 </form>
             </div>
