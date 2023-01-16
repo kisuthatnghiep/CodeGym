@@ -110,4 +110,9 @@ public class ProductController {
             product.setImg(displayLink + "iphone.jpg");
         }
     }
+
+    @GetMapping("/category/{id}")
+    public ResponseEntity<List<Product>> findbyCategory(@PathVariable Long id){
+        return new  ResponseEntity<>(productService.findProductByCategory(categoryService.findById(id).get()), HttpStatus.OK);
+    }
 }
