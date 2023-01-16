@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="employee.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <style>
+    .hide{
+      color: red;
+    }
+  </style>
+</head>
+<body onload="getDataInUpdateForm()">
+<div class="container">
+  <div class="row">
+    <div class="col col-6">
+      <h1>Edit Employee</h1><br><br>
+      <form>
+        <div class="mb-3">
+          <label for="code" class="form-label">Employee Code</label>
+          <input disabled type="text" class="form-control" id="code">
+          <p class="hide" id="code1" >Do not enter empty</p>
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name">
+          <p class="hide" id="name1" >Do not enter empty</p>
+        </div>
+        <div class="mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input type="text" class="form-control" id="age">
+          <p class="hide" id="age1" >Do not enter empty</p>
+          <p class="hide" id="valiage">Wrong format age</p>
+        </div>
+        <div class="mb-3">
+          <label for="salary" class="form-label">Salary</label>
+          <input type="text" class="form-control" id="salary">
+          <p class="hide" id="salary1" >Do not enter empty</p>
+          <p class="hide" id="valisalary">Wrong format salary</p>
+        </div>
+        <div class="mb-3" id="branch_list">
+        </div>
+        <br>
+        <button class="btn btn-primary" onclick="updateEmployee()">Save</button>
+        <a href="index.html" class="btn btn-primary">Back</a>
+      </form>
+    </div>
+    <div class="col col-6">
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7b493ddf-3966-4c50-8cab-46a48de1ca6d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/controller/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/model/Branch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/repository/IBranchRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/repository/IEmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/service/BranchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/service/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/service/IBranchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/service/IEmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/service/IGeneralService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/resources/templates/Detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/resources/templates/employee.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/resources/templates/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module_4/6.JPA/demo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../module_4/6.JPA/demo/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myApp/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/myApp/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myApp/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/myApp/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myApp/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Java Springs.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java Springs.xmind" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/myApp" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2KOQYCOTMGMP9F4MENObp1JG9Tc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/CodeGym/CodeGym_Excercise/module_5",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\CodeGym\\CodeGym_Excercise\\module_5\\myApp\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/myApp/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/angular-change-font-size/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.Angular CLI Server" />
+      <item itemvalue="npm.start" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b493ddf-3966-4c50-8cab-46a48de1ca6d" name="Changes" comment="" />
+      <created>1673843194165</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673843194165</updated>
+      <workItem from="1673843195540" duration="2317000" />
+      <workItem from="1673853138038" duration="995000" />
+      <workItem from="1673859841755" duration="25000" />
+      <workItem from="1673860635679" duration="438000" />
+      <workItem from="1673861104517" duration="1839000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

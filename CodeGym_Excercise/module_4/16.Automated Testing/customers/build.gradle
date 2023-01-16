@@ -8,6 +8,7 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 ext {
@@ -22,16 +23,15 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    compileOnly('javax.servlet:javax.servlet-api:4.0.1')
-    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.24'
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    implementation group: 'org.springframework', name: 'spring-core', version: '5.3.20'
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.20'
+    implementation group: 'org.springframework', name: 'spring-beans', version: '5.3.20'
+    implementation group: 'org.springframework', name: 'spring-web', version: '5.3.20'
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.20'
     implementation group: 'org.thymeleaf', name: 'thymeleaf-spring5', version: '3.0.15.RELEASE'
     implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '3.0.0'
-    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.6.8.Final'
-    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.30'
-    implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.6.10.Final'
-    implementation group: 'org.springframework', name: 'spring-orm', version: '5.3.24'
-    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
-    implementation group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.7.0'
+
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.8.2'
     implementation group: 'org.junit.platform', name: 'junit-platform-commons', version: '1.8.2'
     testImplementation group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.8.2'
@@ -46,6 +46,7 @@ dependencies {
 
 test {
     useJUnitPlatform()
+
     testLogging {
         events "PASSED", "STARTED", "FAILED", "SKIPPED", "STANDARD_OUT", "STANDARD_ERROR"
     }
@@ -55,9 +56,4 @@ test {
     reports {
         html.enabled = true
     }
-}
-
-repositories {
-    mavenCentral()
-    maven { url 'https://jitpack.io' }
 }
