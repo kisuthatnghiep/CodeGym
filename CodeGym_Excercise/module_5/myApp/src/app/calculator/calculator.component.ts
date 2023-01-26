@@ -11,4 +11,13 @@ export class CalculatorComponent{
   add(a: string, b: string){
       this.result = +a + +b;
   }
+  sub(a: string, b: string){
+      this.result = +a - +b;
+  }
+  mul(a: string, b: string){
+      this.result = +a * +b;
+  }
+  div(a: string, b: string){
+      this.result = +a / +b;
+  }
 }

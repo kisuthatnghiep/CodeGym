@@ -5,10 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontSizeEditorComponent } from './font-size-editor/font-size-editor.component';
 import { PetComponent } from './pet/pet.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ProductComponent } from './product/product.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { NameCardComponent } from './name-card/name-card.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { CountdownComponent } from './countdown/countdown.component';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +22,19 @@ import { ColorPickerComponent } from './color-picker/color-picker.component';
     PetComponent,
     ProductComponent,
     CalculatorComponent,
-    ColorPickerComponent
+    ColorPickerComponent,
+    ArticlesComponent,
+    NameCardComponent,
+    ProgressBarComponent,
+    CountdownComponent,
+    TodoComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b493ddf-3966-4c50-8cab-46a48de1ca6d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/controller/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/model/Branch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/model/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/repository/IBranchRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/repository/IEmployeeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/service/BranchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/service/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/service/IBranchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/service/IEmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/java/com/example/module_4/service/IGeneralService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/resources/templates/Detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/resources/templates/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/resources/templates/employee.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../CodeGym_Exam/module_4/src/main/resources/templates/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module_4/6.JPA/demo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../module_4/6.JPA/demo/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myApp/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/myApp/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myApp/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/myApp/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myApp/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Java Springs.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java Springs.xmind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../Angular.xmind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CodeGym_Case_Study/case-study-4" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodeGym_Case_Study/case-study-4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module_4/Minitest/Ajax_C08" beforeDir="false" afterPath="$PROJECT_DIR$/../module_4/Minitest/Ajax_C08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/myApp" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,19 +24,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/CodeGym/CodeGym_Excercise/module_5",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\CodeGym\\CodeGym_Excercise\\module_5\\myApp\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CodeGym/CodeGym_Excercise/module_5&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\CodeGym\\CodeGym_Excercise\\module_5\\myApp\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CodeGym\CodeGym_Excercise\module_5\myApp\src\assets" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular CLI Server" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/myApp/package.json" />
@@ -97,6 +86,8 @@
       <workItem from="1673859841755" duration="25000" />
       <workItem from="1673860635679" duration="438000" />
       <workItem from="1673861104517" duration="1839000" />
+      <workItem from="1673917663702" duration="11113000" />
+      <workItem from="1674006208074" duration="2990000" />
     </task>
     <servers />
   </component>

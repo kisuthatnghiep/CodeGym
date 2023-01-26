@@ -8,15 +8,15 @@
     </div>
     <div class="col col-6">
       <span>Result: </span>
-      <span [(ngModel)]="result"></span>
+      <span [innerHTML]="result"></span>
     </div>
   </div>
   <div class="row" style="margin-top: 10px">
     <div class="col col-3">
       <button class="btn btn-primary" style="margin-right: 10px; width: 50px" (click)="add(operand1.value, operand2.value)">+</button>
-      <button class="btn btn-primary"style="margin-right: 10px; width: 50px">-</button>
-      <button class="btn btn-primary"style="margin-right: 10px; width: 50px">x</button>
-      <button class="btn btn-primary"style="margin-right: 10px; width: 50px">/</button>
+      <button class="btn btn-primary"style="margin-right: 10px; width: 50px" (click)="sub(operand1.value, operand2.value)">-</button>
+      <button class="btn btn-primary"style="margin-right: 10px; width: 50px" (click)="mul(operand1.value, operand2.value)">x</button>
+      <button class="btn btn-primary"style="margin-right: 10px; width: 50px" (click)="div(operand1.value, operand2.value)">/</button>
     </div>
   </div>
 </div>
