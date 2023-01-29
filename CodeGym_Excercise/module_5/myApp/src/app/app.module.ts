@@ -14,6 +14,8 @@ import { NameCardComponent } from './name-card/name-card.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { TodoComponent } from './todo/todo.component';
+import { YoutubePlaylistComponent } from './youtube-playlist/youtube-playlist.component';
+import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { TodoComponent } from './todo/todo.component';
     NameCardComponent,
     ProgressBarComponent,
     CountdownComponent,
-    TodoComponent
+    TodoComponent,
+    YoutubePlaylistComponent,
+    YoutubePlayerComponent
   ],
     imports: [
         BrowserModule,
