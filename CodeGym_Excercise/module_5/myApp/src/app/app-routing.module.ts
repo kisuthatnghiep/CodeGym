@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {YoutubePlaylistComponent} from "./youtube-playlist/youtube-playlist.component";
-import {YoutubePlayerComponent} from "./youtube-player/youtube-player.component";
+import {ProductListComponent} from "./product/product-list/product-list.component";
+import {ProductCreateComponent} from "./product/product-create/product-create.component";
+import {ProductUpdateComponent} from "./product/product-update/product-update.component";
 
 const routes: Routes = [
   {
-    path: 'youtube',
-    component: YoutubePlaylistComponent,
-    children: [{
-      path: ':id',
-      component: YoutubePlayerComponent
-    }]
+    path: 'product/list',
+    component: ProductListComponent
+  }, {
+    path: 'product/create',
+    component: ProductCreateComponent
+  }, {
+    path: 'product/list/product/update/:id',
+    component: ProductUpdateComponent
   }
 ];
 

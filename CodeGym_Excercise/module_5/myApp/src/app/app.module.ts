@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FontSizeEditorComponent } from './font-size-editor/font-size-editor.component';
 import { PetComponent } from './pet/pet.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { ProductComponent } from './product/product.component';
+import { ProductComponent } from './product1/product.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { ArticlesComponent } from './articles/articles.component';
@@ -16,6 +16,9 @@ import { CountdownComponent } from './countdown/countdown.component';
 import { TodoComponent } from './todo/todo.component';
 import { YoutubePlaylistComponent } from './youtube-playlist/youtube-playlist.component';
 import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductUpdateComponent } from './product/product-update/product-update.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { YoutubePlayerComponent } from './youtube-player/youtube-player.componen
     CountdownComponent,
     TodoComponent,
     YoutubePlaylistComponent,
-    YoutubePlayerComponent
+    YoutubePlayerComponent,
+    ProductListComponent,
+    ProductCreateComponent,
+    ProductUpdateComponent
   ],
     imports: [
         BrowserModule,
