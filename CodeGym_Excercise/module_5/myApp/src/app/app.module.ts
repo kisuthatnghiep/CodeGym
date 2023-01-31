@@ -19,6 +19,7 @@ import { YoutubePlayerComponent } from './youtube-player/youtube-player.componen
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { ProductUpdateComponent } from './product/product-update/product-update.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProductUpdateComponent } from './product/product-update/product-update.
     YoutubePlayerComponent,
     ProductListComponent,
     ProductCreateComponent,
-    ProductUpdateComponent
+    ProductUpdateComponent,
+    RegisterComponent
   ],
     imports: [
         BrowserModule,

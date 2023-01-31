@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b493ddf-3966-4c50-8cab-46a48de1ca6d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Angular.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../Angular.xmind" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CodeGym_Case_Study/case-study-4" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodeGym_Case_Study/case-study-4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module_4/Minitest/Ajax_C08" beforeDir="false" afterPath="$PROJECT_DIR$/../module_4/Minitest/Ajax_C08" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -89,6 +88,8 @@
       <workItem from="1673917663702" duration="11113000" />
       <workItem from="1674006208074" duration="2990000" />
       <workItem from="1675040895972" duration="18508000" />
+      <workItem from="1675129344539" duration="8355000" />
+      <workItem from="1675149436159" duration="2134000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,87 @@
+<div class="container">
+  <h1>Register Form</h1>
+  <br>
+  <div class="row">
+    <div class="col col-5">
+      <form  [formGroup]="userForm" (ngSubmit)="submit()">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="email" placeholder="name@example.com">
+        <p style="color: red" *ngIf="!userForm.controls.email.valid">Wrong format Email</p>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password" id="exampleFormControlInput2">
+        <p style="color: red" *ngIf="!userForm.controls.password.valid">
+          Password needs at least 6 characters</p>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput3" class="form-label">Re-password</label>
+        <input type="password" class="form-control" formControlName="passConfirm" id="exampleFormControlInput3">
+        <p style="color: red" *ngIf="!userForm.controls.passConfirm.valid">
+          Password needs at least 6 characters</p>
+      </div>
+      <div class="mb-3">
+        <label>Country</label>
+        <select class="form-select" formControlName="country">
+          <option value="Vietnam">Vietnam</option>
+          <option value="Thailand">Thailand</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+          <option value="Canada">Canada</option>
+        </select>
+        <p style="color: red" *ngIf="!userForm.controls.country.valid">
+          Please select country</p>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput4" class="form-label">Age</label>
+        <input type="number" class="form-control" formControlName="age" id="exampleFormControlInput4">
+        <p style="color: red" *ngIf="!userForm.controls.age.valid">
+          Age needs at least 19</p>
+      </div>
+      <div class="mb-3">
+        <label>Gender</label>
+        <select class="form-select" formControlName="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <p style="color: red" *ngIf="!userForm.controls.gender.valid">
+          Please select gender</p>
+      </div>
+      <div class="mb-3">
+        <label>Telephone</label>
+      <input type="text" class="form-control" formControlName="phone">
+      </div>
+      <button class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    <div class="col col-7">
+    </div>
+  </div>
+  <h1 style="margin-top: 100px">User list</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>User No</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Re-Password</th>
+    <th>Country</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Telephone</th></tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let u of userList, index as i">
+      <td>{{i + 1}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.password}}</td>
+      <td>{{u.passConfirm}}</td>
+      <td>{{u.country}}</td>
+      <td>{{u.age}}</td>
+      <td>{{u.gender}}</td>
+      <td>{{u.phone}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

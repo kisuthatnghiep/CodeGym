@@ -4,6 +4,7 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
 import {ProductService} from "../../service/product.service";
 // @ts-ignore
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import {Product} from "../../model/product";
 
 @Component({
   selector: 'app-product-update',
@@ -15,18 +16,17 @@ export class ProductUpdateComponent{
   id: number | any;
 
   constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-      // @ts-ignore
+    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap | any) => {
       this.id = +paramMap.get('id');
-        const product = this.getProduct(this.id);
+        const product: Product | any = this.getProduct(this.id);
       this.productForm = new FormGroup({
-      // @ts-ignore
+
           id: new FormControl(product.id),
-      // @ts-ignore
+
           name: new FormControl(product.name),
-        // @ts-ignore
+
           price: new FormControl(product.price),
-        // @ts-ignore
+
           description: new FormControl(product.description),
         });
     });
