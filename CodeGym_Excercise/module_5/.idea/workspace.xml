@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7b493ddf-3966-4c50-8cab-46a48de1ca6d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../CodeGym_Case_Study/case-study-4" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodeGym_Case_Study/case-study-4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module_4/17.SpringBoot/product_manager/src/main/java/com/example/product_manager/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module_4/17.SpringBoot/product_manager/src/main/java/com/example/product_manager/controller/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module_4/Minitest/Ajax_C08" beforeDir="false" afterPath="$PROJECT_DIR$/../module_4/Minitest/Ajax_C08" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/module_5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/module_5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +106,7 @@
       <workItem from="1675149436159" duration="2134000" />
       <workItem from="1675213252998" duration="11529000" />
       <workItem from="1675233758227" duration="7658000" />
+      <workItem from="1675257817919" duration="347000" />
     </task>
     <servers />
   </component>
