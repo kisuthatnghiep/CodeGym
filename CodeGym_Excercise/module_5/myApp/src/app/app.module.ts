@@ -24,6 +24,10 @@ import {RegisterComponent} from './register/register.component';
 import {CategoryComponent} from './category/category.component';
 import {DictionaryPageComponent} from './dictionary-page/dictionary-page.component';
 import {DictionaryDetailComponent} from './dictionary-detail/dictionary-detail.component';
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 
 @NgModule({
   declarations: [
@@ -54,7 +58,10 @@ import {DictionaryDetailComponent} from './dictionary-detail/dictionary-detail.c
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
