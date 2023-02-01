@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
-import {Product} from "../../model/product";
+import {Product2} from "../../model/product2";
 import {ProductService} from "../../service/product.service";
 // @ts-ignore
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
-  selector: 'app-product-list',
+  selector: 'app-product2-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Product[] = []
+  products: Product2[] = []
 
   constructor(private productService: ProductService) {
   }

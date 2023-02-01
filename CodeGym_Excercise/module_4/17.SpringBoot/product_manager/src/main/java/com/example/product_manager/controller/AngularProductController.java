@@ -21,16 +21,12 @@ public class AngularProductController {
     @Autowired
     private ICategoryService categoryService;
     @GetMapping
-    public ResponseEntity<Object> index(){
+    public ResponseEntity<List<Product>> index(){
         List<Product> products =(List<Product>) productService.findAll();
-        List<Category> categories =(List<Category>) categoryService.findAll();
-        List<Object> objects = new ArrayList<>();
-        objects.add(products);
-        objects.add(categories);
         if (products.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(objects, HttpStatus.OK);
+        return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
     @GetMapping("/search")

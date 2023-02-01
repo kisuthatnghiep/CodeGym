@@ -4,7 +4,7 @@ import {ProductService} from "../../service/product.service";
 // @ts-ignore
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
-  selector: 'app-product-create',
+  selector: 'app-product2-create',
   templateUrl: './product-create.component.html',
   styleUrls: ['./product-create.component.css']
 })

@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {Product} from "../model/product";
+import {Product2} from "../model/product2";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  products: Product[] = [{
+  products: Product2[] = [{
     id: 1,
     name: 'IPhone 12',
     price: 2400000,
@@ -39,7 +39,7 @@ export class ProductService {
     return this.products;
   }
 
-  create(product: Product) {
+  create(product: Product2) {
     this.products.push(product)
   }
 
@@ -61,7 +61,7 @@ export class ProductService {
     }
   }
 
-  update(id: number, product: Product){
+  update(id: number, product: Product2){
     for (let i = 0; i < this.products.length; i++){
       if (this.products[i].id === id){
         this.products[i] = product

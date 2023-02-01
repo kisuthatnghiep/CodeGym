@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ProductListComponent} from "./product/product-list/product-list.component";
-import {ProductCreateComponent} from "./product/product-create/product-create.component";
-import {ProductUpdateComponent} from "./product/product-update/product-update.component";
+import {ProductListComponent} from "./product2/product-list/product-list.component";
+import {ProductCreateComponent} from "./product2/product-create/product-create.component";
+import {ProductUpdateComponent} from "./product2/product-update/product-update.component";
 import {DictionaryPageComponent} from "./dictionary-page/dictionary-page.component";
 import {DictionaryDetailComponent} from "./dictionary-detail/dictionary-detail.component";
 
 const routes: Routes = [
   {
 
-  //   path: 'product/list',
+  //   path: 'product2/list',
   //   component: ProductListComponent
   // }, {
-  //   path: 'product/create',
+  //   path: 'product2/create',
   //   component: ProductCreateComponent
   // }, {
-  //   path: 'product/update/:id',
+  //   path: 'product2/update/:id',
   //   component: ProductUpdateComponent
     path: 'dictionary/list',
     component: DictionaryPageComponent

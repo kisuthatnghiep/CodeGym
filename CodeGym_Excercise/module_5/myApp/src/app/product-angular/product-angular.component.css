@@ -1,0 +1,17 @@
+th,td{
+  text-align: center;
+}
+.but{
+  padding: 0;
+  width: 10.66%;
+}
+.input_search{
+  width: 31%;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+td{
+  vertical-align: middle;
+}

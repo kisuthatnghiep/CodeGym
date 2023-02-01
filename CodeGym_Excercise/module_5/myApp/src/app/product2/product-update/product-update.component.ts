@@ -4,10 +4,10 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
 import {ProductService} from "../../service/product.service";
 // @ts-ignore
 import Swal from 'sweetalert2/dist/sweetalert2.js';
-import {Product} from "../../model/product";
+import {Product2} from "../../model/product2";
 
 @Component({
-  selector: 'app-product-update',
+  selector: 'app-product2-update',
   templateUrl: './product-update.component.html',
   styleUrls: ['./product-update.component.css']
 })
@@ -18,7 +18,7 @@ export class ProductUpdateComponent{
   constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap | any) => {
       this.id = +paramMap.get('id');
-        const product: Product | any = this.getProduct(this.id);
+        const product: Product2 | any = this.getProduct(this.id);
       this.productForm = new FormGroup({
 
           id: new FormControl(product.id),

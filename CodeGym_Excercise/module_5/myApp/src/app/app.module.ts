@@ -17,9 +17,9 @@ import {CountdownComponent} from './countdown/countdown.component';
 import {TodoComponent} from './todo/todo.component';
 import {YoutubePlaylistComponent} from './youtube-playlist/youtube-playlist.component';
 import {YoutubePlayerComponent} from './youtube-player/youtube-player.component';
-import {ProductListComponent} from './product/product-list/product-list.component';
-import {ProductCreateComponent} from './product/product-create/product-create.component';
-import {ProductUpdateComponent} from './product/product-update/product-update.component';
+import {ProductListComponent} from './product2/product-list/product-list.component';
+import {ProductCreateComponent} from './product2/product-create/product-create.component';
+import {ProductUpdateComponent} from './product2/product-update/product-update.component';
 import {RegisterComponent} from './register/register.component';
 import {CategoryComponent} from './category/category.component';
 import {DictionaryPageComponent} from './dictionary-page/dictionary-page.component';
@@ -28,6 +28,7 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
+import { ProductAngularComponent } from './product-angular/product-angular.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
     RegisterComponent,
     CategoryComponent,
     DictionaryPageComponent,
-    DictionaryDetailComponent
+    DictionaryDetailComponent,
+    ProductAngularComponent
 
   ],
   imports: [
