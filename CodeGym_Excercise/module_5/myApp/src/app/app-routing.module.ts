@@ -8,22 +8,20 @@ import {DictionaryDetailComponent} from "./dictionary-detail/dictionary-detail.c
 
 const routes: Routes = [
   {
-<<<<<<< HEAD
-    path: 'product/list',
-    component: ProductListComponent
-  }, {
-    path: 'product/create',
-    component: ProductCreateComponent
-  }, {
-    path: 'product/update/:id',
-    component: ProductUpdateComponent
-=======
+
+  //   path: 'product/list',
+  //   component: ProductListComponent
+  // }, {
+  //   path: 'product/create',
+  //   component: ProductCreateComponent
+  // }, {
+  //   path: 'product/update/:id',
+  //   component: ProductUpdateComponent
     path: 'dictionary/list',
     component: DictionaryPageComponent
   },{
     path: 'dictionary/list/word/:word',
     component: DictionaryDetailComponent
->>>>>>> ab3b6c22a041e49db30da71954b851e720847b98
   }
 ];
 

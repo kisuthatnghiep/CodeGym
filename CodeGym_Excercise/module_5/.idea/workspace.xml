@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7b493ddf-3966-4c50-8cab-46a48de1ca6d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../CodeGym_Case_Study/case-study-4" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodeGym_Case_Study/case-study-4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module_4/17.SpringBoot/product_manager/src/main/java/com/example/product_manager/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module_4/17.SpringBoot/product_manager/src/main/java/com/example/product_manager/controller/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module_4/Minitest/Ajax_C08" beforeDir="false" afterPath="$PROJECT_DIR$/../module_4/Minitest/Ajax_C08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/module_5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/module_5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -11,8 +14,23 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="93222a40-db86-40d6-83e6-3391d7ab36b9" />
+        <option name="url" value="https://github.com/kisuthatnghiep/CodeGym.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -90,6 +108,8 @@
       <workItem from="1675040895972" duration="18508000" />
       <workItem from="1675129344539" duration="8355000" />
       <workItem from="1675149436159" duration="2134000" />
+      <workItem from="1675213252998" duration="11529000" />
+      <workItem from="1675233758227" duration="7658000" />
     </task>
     <servers />
   </component>

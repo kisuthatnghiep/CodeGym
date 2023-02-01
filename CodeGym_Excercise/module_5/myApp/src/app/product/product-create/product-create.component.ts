@@ -21,6 +21,7 @@ productForm: FormGroup = new FormGroup({
   const product = this.productForm.value;
   this.productService.create(product);
   this.productForm.reset();
+
   this.confirmSuccess()
   }
   confirmSuccess(){

@@ -5,33 +5,21 @@ import com.example.product_manager.model.Product;
 import com.example.product_manager.service.ICategoryService;
 import com.example.product_manager.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/products")
-@PropertySource("classpath:application.properties")
-public class ProductController {
+@RequestMapping("/product")
+public class AngularProductController {
     @Autowired
     private IProductService productService;
     @Autowired
     private ICategoryService categoryService;
-    @Value("${upload.path}")
-    private String link;
-    @Value("${display.path}")
-    private String displayLink;
     @GetMapping
     public ResponseEntity<Object> index(){
         List<Product> products =(List<Product>) productService.findAll();
@@ -62,8 +50,7 @@ public class ProductController {
         return new ResponseEntity<>(objects, HttpStatus.OK);
     }
     @PostMapping
-    public ResponseEntity<String> create(@RequestPart("product") Product product, @RequestPart(value = "file", required = false) MultipartFile file){
-        uploadFile(product, file);
+    public ResponseEntity<String> create(@RequestBody Product product){
         productService.save(product);
         return new ResponseEntity<>("Create product successfully!", HttpStatus.CREATED);
     }
@@ -78,36 +65,21 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateProduct(@PathVariable Long id, @RequestPart("product") Product product, @RequestPart(value = "file", required = false) MultipartFile file) {
+    public ResponseEntity<?> updateProduct(@PathVariable Long id, @RequestBody Product product) {
         Optional<Product> productOptional = productService.findById(id);
         if (!productOptional.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        uploadFile(product, file);
         if (product.getImg() == null){
             product.setImg(productOptional.get().getImg());
         }
         product.setId(productOptional.get().getId());
         productService.save(product);
-        return new ResponseEntity<>("Update successfully!", HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
     @GetMapping("/{id}")
     public ResponseEntity<Product> findOne(@PathVariable Long id){
         return new ResponseEntity<>(productService.findById(id).get(), HttpStatus.OK);
-    }
-
-    private void uploadFile(Product product, MultipartFile file){
-        if (file != null) {
-            String fileName = file.getOriginalFilename();
-            try {
-                FileCopyUtils.copy(file.getBytes(), new File(link + fileName));
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-            product.setImg(displayLink + fileName);
-        } else {
-            product.setImg(displayLink + "iphone.jpg");
-        }
     }
 
     @GetMapping("/category/{id}")
