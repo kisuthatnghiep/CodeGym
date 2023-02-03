@@ -29,4 +29,12 @@ export class ProductAngularService {
   deleteProduct(id: number): Observable<any>{
     return this.http.delete<any>(API_URL + `product/${id}`);
   }
+
+  searchProduct(q: string): Observable<Product[]>{
+    return this.http.get<Product[]>(API_URL + `product/search?q=` + q)
+  }
+
+  filterByCategory(id: any): Observable<Product[]>{
+    return this.http.get<Product[]>(API_URL + `product/category/${id}`)
+  }
 }

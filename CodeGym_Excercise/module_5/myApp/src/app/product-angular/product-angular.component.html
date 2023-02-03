@@ -2,93 +2,106 @@
   <h1>Product List</h1>
   <div class="row">
     <div class="col-2 but">
-      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreateProduct">Create Product</button>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreateProduct">Create Product
+      </button>
     </div>
-    <div class="col-6">
-      <a class="btn btn-primary">Category List</a>
+    <div class="col-2">
+      <a class="btn btn-primary" routerLink="/category">Category List</a>
     </div>
     <div class="col-3 input_search">
-      <input type="text" class="form-control " id="search">
+      <input type="text" class="form-control " #search>
     </div>
     <div class="col-1">
-      <button class="btn btn-primary" onclick="searchProduct()">Search</button>
+      <button class="btn btn-primary" (click)="searchProduct(search.value)">Search</button>
+    </div>
+    <div class="col-4">
+      <select class="form-select" #filter (change)="filterByCategory(filter.value)">
+        <option selected value="0">Show All Products</option>
+        <option *ngFor="let c of categories" value="{{c.id}}">{{c.name}}</option>
+      </select>
     </div>
   </div>
   <br>
   <div id="product_list">
     <div class="container">
-      <table class="table table-striped">
-        <thead>
-        <th>Product No</th>
-        <th>Product Name</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Category</th>
-        <th>Image</th>
-        <th></th>
-        <th></th>
-        </thead>
-        <tbody>
-        <tr *ngFor="let p of products, index as i">
-          <td>{{i + 1}}</td>
-          <td>{{p.name}}</td>
-          <td>{{p.price}}</td>
-          <td>{{p.quantity}}</td>
-          <td>{{p.category?.name}}</td>
-          <td><img src="{{p.img}}" alt="img"></td>
-          <td>
-            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalUpdateProduct" (click)="getProduct(p.id)">Update</button>
-          </td>
-          <td>
-            <button class="btn btn-danger" (click)="deleteProduct(p.id)">Delete</button>
-          </td>
-        </tr>
-        </tbody>
+      <div>
+        <table class="table table-striped">
+          <thead>
+          <th>Product No</th>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Category</th>
+          <th>Image</th>
+          <th></th>
+          <th></th>
+          </thead>
+          <tbody
+            infiniteScroll
+            [infiniteScrollDistance]="2"
+            [infiniteScrollThrottle]="50"
+            (scrolled)="onScroll()">
+          <tr *ngFor="let p of products, index as i" class="paging">
+            <td>{{i + 1}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.quantity}}</td>
+            <td>{{p.category?.name}}</td>
+            <td><img src="{{p.img}}" alt="img"></td>
+            <td>
+              <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalUpdateProduct"
+                      (click)="getProduct(p.id)">Update
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteProduct(p.id)">Delete</button>
+            </td>
+          </tr>
+      </tbody>
       </table>
     </div>
   </div>
-  <ul class="listPage">
-
-  </ul>
+</div>
 </div>
 
 <!-- Modal Create-->
 <div class="modal fade" id="modalCreateProduct" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel1">Create Product</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
+      <form [formGroup]="productForm" (ngSubmit)="createProduct()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">Create Product</h5>
+          <button type="button" id="btnCreate" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
           <div class="mb-3">
             <label for="name" class="form-label">Product name</label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" formControlName="name" id="name">
           </div>
           <div class="mb-3">
             <label for="price" class="form-label">Price</label>
-            <input type="text" class="form-control" id="price">
+            <input type="text" class="form-control" formControlName="price" id="price">
           </div>
           <div class="mb-3">
             <label for="quantity" class="form-label">Quantity</label>
-            <input type="text" class="form-control" id="quantity">
+            <input type="text" class="form-control" formControlName="quantity" id="quantity">
           </div>
-          <div class="mb-3">
+          <div class="mb-3" formGroupName="category">
             <label>Category</label>
-            <select class="form-select">
-              <option *ngFor="let c of categories" value="">{{c.name}}</option>
+            <select class="form-select" formControlName="id">
+              <option *ngFor="let c of categories" value="{{c.id}}">{{c.name}}</option>
             </select>
           </div>
           <div>
             <label for="file" class="form-label">Image</label>
-            <input type="file" class="form-control" id="file">
+            <input type="file" class="form-control" id="file" (change)="submitAvatar($event)">
+
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="createProduct()">Submit</button>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary">Submit</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -96,12 +109,13 @@
 <div class="modal fade" id="modalUpdateProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-        <form [formGroup]="productUpdateForm" (ngSubmit)="updateProduct()">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Update Product</h5>
-        <button type="button" id="btnCloseUpdateProduct" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
+      <form [formGroup]="productUpdateForm" (ngSubmit)="updateProduct()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Product</h5>
+          <button type="button" id="btnCloseUpdateProduct" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
           <div class="mb-3">
             <label for="name_update" class="form-label">Product name</label>
             <input type="text" class="form-control" formControlName="name" id="name_update">
@@ -114,21 +128,21 @@
             <label for="quantity_update" class="form-label">Quantity</label>
             <input type="text" class="form-control" formControlName="quantity" id="quantity_update">
           </div>
-          <div class="mb-3">
+          <div class="mb-3" formGroupName="category">
             <label>Category</label>
-            <select class="form-select" formControlName="category">
+            <select class="form-select" formControlName="id">
               <option *ngFor="let c of categories" value="{{c.id}}">{{c.name}}</option>
             </select>
           </div>
           <div>
             <label for="file_update" class="form-label">Image</label><br>
-            <input type="file" class="form-control" id="file_update">
+            <input type="file" class="form-control" id="file_update" (change)="submitAvatar($event)">
           </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Submit</button>
-      </div>
-        </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary">Submit</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

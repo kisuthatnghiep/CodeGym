@@ -31,33 +31,31 @@ public class AngularProductController {
 
     @GetMapping("/search")
     public ResponseEntity<Object> searchProduct(@RequestParam("q") Optional<String> q){
-        List<Object> objects = new ArrayList<>();
         if (q.isPresent()){
             List<Product> productList =(List<Product>)productService.search(q.get());
-            objects.add(productList);
-            objects.add(categoryService.findAll());
             if (productList.isEmpty()){
-                return new ResponseEntity<>(objects, HttpStatus.NOT_FOUND);
+                return new ResponseEntity<>(productList, HttpStatus.NOT_FOUND);
             }
-            return new ResponseEntity<>(objects, HttpStatus.OK);
+            return new ResponseEntity<>(productList, HttpStatus.OK);
         }
-        objects.add(productService.findAll());
-        objects.add(categoryService.findAll());
-        return new ResponseEntity<>(objects, HttpStatus.OK);
+        return new ResponseEntity<>(productService.findAll(), HttpStatus.OK);
     }
     @PostMapping
-    public ResponseEntity<String> create(@RequestBody Product product){
+    public ResponseEntity<?> create(@RequestBody Product product){
+        if (product.getImg() == null){
+            product.setImg("http://www.clker.com/cliparts/u/v/4/T/s/r/cartoon-mobile-phone1-md.png");
+        }
         productService.save(product);
-        return new ResponseEntity<>("Create product successfully!", HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
     @DeleteMapping("{id}")
-    public ResponseEntity<String> delete(@PathVariable Long id){
+    public ResponseEntity<?> delete(@PathVariable Long id){
         Optional<Product> product= productService.findById(id);
         if (!product.isPresent()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         productService.remove(id);
-        return new ResponseEntity<>("Delete product successfully!", HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @PutMapping("/{id}")
@@ -79,7 +77,7 @@ public class AngularProductController {
     }
 
     @GetMapping("/category/{id}")
-    public ResponseEntity<List<Product>> findbyCategory(@PathVariable Long id){
+    public ResponseEntity<List<Product>> findByCategory(@PathVariable Long id){
         return new  ResponseEntity<>(productService.findProductByCategory(categoryService.findById(id).get()), HttpStatus.OK);
     }
 }

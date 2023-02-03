@@ -29,7 +29,7 @@ import {environment} from "../environments/environment";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import { ProductAngularComponent } from './product-angular/product-angular.component';
-
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +64,7 @@ import { ProductAngularComponent } from './product-angular/product-angular.compo
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

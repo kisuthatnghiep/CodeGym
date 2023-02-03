@@ -5,9 +5,11 @@ import {ProductCreateComponent} from "./product2/product-create/product-create.c
 import {ProductUpdateComponent} from "./product2/product-update/product-update.component";
 import {DictionaryPageComponent} from "./dictionary-page/dictionary-page.component";
 import {DictionaryDetailComponent} from "./dictionary-detail/dictionary-detail.component";
+import {ProductAngularComponent} from "./product-angular/product-angular.component";
+import {CategoryComponent} from "./category/category.component";
 
 const routes: Routes = [
-  {
+  // {
 
   //   path: 'product2/list',
   //   component: ProductListComponent
@@ -17,11 +19,19 @@ const routes: Routes = [
   // }, {
   //   path: 'product2/update/:id',
   //   component: ProductUpdateComponent
-    path: 'dictionary/list',
-    component: DictionaryPageComponent
+  // {
+  //   path: 'dictionary/list',
+  //   component: DictionaryPageComponent
+  // },{
+  //   path: 'dictionary/list/word/:word',
+  //   component: DictionaryDetailComponent
+  // }
+  {
+    path: '',
+    component: ProductAngularComponent
   },{
-    path: 'dictionary/list/word/:word',
-    component: DictionaryDetailComponent
+    path: 'category',
+    component: CategoryComponent
   }
 ];
 

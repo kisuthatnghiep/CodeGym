@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b493ddf-3966-4c50-8cab-46a48de1ca6d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Angular.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../Angular.xmind" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CodeGym_Case_Study/case-study-4" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodeGym_Case_Study/case-study-4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module_4/17.SpringBoot/product_manager/src/main/java/com/example/product_manager/controller/AngularProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module_4/17.SpringBoot/product_manager/src/main/java/com/example/product_manager/controller/AngularProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module_4/17.SpringBoot/product_manager/src/main/java/com/example/product_manager/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module_4/17.SpringBoot/product_manager/src/main/java/com/example/product_manager/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module_4/Minitest/Ajax_C08" beforeDir="false" afterPath="$PROJECT_DIR$/../module_4/Minitest/Ajax_C08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,19 +41,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/CodeGym/CodeGym_Excercise/module_5&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\CodeGym\\CodeGym_Excercise\\module_5\\myApp\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/CodeGym/CodeGym_Excercise/module_5",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\CodeGym\\CodeGym_Excercise\\module_5\\myApp\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\CodeGym\CodeGym_Excercise\module_5\myApp\src\assets" />
@@ -107,6 +111,13 @@
       <workItem from="1675213252998" duration="11529000" />
       <workItem from="1675233758227" duration="7658000" />
       <workItem from="1675257817919" duration="347000" />
+      <workItem from="1675269601104" duration="536000" />
+      <workItem from="1675300448885" duration="9869000" />
+      <workItem from="1675321267412" duration="3242000" />
+      <workItem from="1675327308478" duration="6456000" />
+      <workItem from="1675386899539" duration="9603000" />
+      <workItem from="1675407173152" duration="3566000" />
+      <workItem from="1675417452248" duration="682000" />
     </task>
     <servers />
   </component>
