@@ -39,9 +39,9 @@
           <tbody
             infiniteScroll
             [infiniteScrollDistance]="2"
-            [infiniteScrollThrottle]="50"
+            [infiniteScrollThrottle]="1000"
             (scrolled)="onScroll()">
-          <tr *ngFor="let p of products, index as i" class="paging">
+          <tr *ngFor="let p of productPaging, index as i" class="paging">
             <td>{{i + 1}}</td>
             <td>{{p.name}}</td>
             <td>{{p.price}}</td>

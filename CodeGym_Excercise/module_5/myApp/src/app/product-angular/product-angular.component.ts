@@ -20,6 +20,7 @@ export class ProductAngularComponent implements OnInit {
               private categoryService: CategoryService,
               private storage: AngularFireStorage) {
   }
+
   productForm: FormGroup = new FormGroup({
     name: new FormControl(),
     price: new FormControl(),
@@ -40,14 +41,30 @@ export class ProductAngularComponent implements OnInit {
     img: new FormControl()
   })
   products: Product[] = []
+  productPaging: Product[] = []
   categories: Category[] = []
   imageFile: any
 
   path!: string
   pathName!: string
 
-  onScroll(){
-    console.log("test")
+  k: number = 0
+
+  ngOnInit() {
+    this.getAll()
+    this.getAllCategory()
+  }
+
+  onScroll() {
+    for (let i = this.k; i < this.k + 8; i++) {
+      if (this.products[i] !== undefined) {
+        this.productPaging[i] = this.products[i]
+      } else {
+        break
+      }
+    }
+    console.log(this.productPaging)
+    this.k += 8
   }
 
   submitAvatar(event: any) {
@@ -58,11 +75,14 @@ export class ProductAngularComponent implements OnInit {
   }
 
   filterByCategory(id: any) {
+    this.k = 0
     if (id == 0) {
       this.getAll()
     } else {
       this.productService.filterByCategory(id).subscribe(data => {
         this.products = data
+        this.productPaging = []
+        this.onScroll()
       })
     }
   }
@@ -105,22 +125,24 @@ export class ProductAngularComponent implements OnInit {
     )
   }
 
-  ngOnInit(){
-    this.getAll()
-    this.getAllCategory()
-  }
 
   getAll() {
     this.productService.getAll().subscribe(products => {
+      this.productPaging = []
       this.products = products;
+      this.onScroll()
     })
   }
 
   searchProduct(q: string) {
+    this.k = 0
+    this.productPaging = []
     this.productService.searchProduct(q).subscribe(products => {
       this.products = products
+      this.onScroll()
     }, () => {
       this.products = []
+      this.onScroll()
     })
   }
 
@@ -195,44 +217,4 @@ export class ProductAngularComponent implements OnInit {
       })
     }
   }
-
-  //pagination
-  // sum = 7;
-  // direction = "";
-  //
-  // onScrollDown(ev: any) {
-  //   console.log("scrolled down!!", ev);
-  //
-  //   this.sum += 20;
-  //   this.appendItems();
-  //
-  //   this.direction = "scroll down";
-  // }
-  //
-  // onScrollUp(ev: any) {
-  //   console.log("scrolled up!", ev);
-  //   this.sum += 20;
-  //   this.prependItems();
-  //
-  //   this.direction = "scroll up";
-  // }
-  //
-  // appendItems() {
-  //   this.addItems("push");
-  // }
-  //
-  // prependItems() {
-  //   this.addItems("unshift");
-  // }
-  //
-  // addItems(_method: string) {
-  //   for (let i = 0; i < this.sum; ++i) {
-  //     if( _method === 'push'){
-  //       this.productPaging[i] = this.products[i];
-  //     }else if( _method === 'unshift'){
-  //       // this.products.unshift[i];
-  //       this.productPaging[i] = this.products[i];
-  //     }
-  //   }
-  // }
 }
