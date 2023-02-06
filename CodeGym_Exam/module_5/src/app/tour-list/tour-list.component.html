@@ -1,0 +1,121 @@
+<div class="container">
+  <h1>Tour List</h1>
+  <div class="row">
+    <div class="col col-2">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate">Create Tour</button>
+    </div>
+    <div class="col col-10">
+      <strong style="float: right;">Quantity: {{quantity}}</strong>
+    </div>
+  </div>
+  <br>
+  <table class="table table-striped">
+    <thead>
+    <th>#</th>
+    <th>Place</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    </thead>
+    <tbody infiniteScroll
+           [infiniteScrollDistance]="2"
+           [infiniteScrollThrottle]="3000"
+           (scrolled)="onScroll()">
+    <tr *ngFor="let p of tourPaging, index as i">
+      <td>{{i + 1}}</td>
+      <td style="cursor: pointer" [routerLink]="['detail', p.id]">{{p.title}}</td>
+      <td>{{p.price}}</td>
+      <td>
+        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalUpdate"
+                (click)="getTour(p.id)">Update
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="getDeleteTour(p.id)" data-bs-toggle="modal" data-bs-target="#modalDelete">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal Create-->
+<div class="modal fade" id="modalCreate" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form [formGroup]="tourCreateForm" (ngSubmit)="createTour()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">Create Tour</h5>
+          <button type="button" id="btnCreate" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="name" class="form-label">Title</label>
+            <input type="text" class="form-control" formControlName="title" id="name">
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" class="form-control" formControlName="price" id="price">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea type="text" class="form-control longtext" formControlName="description"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Modal update-->
+<div class="modal fade" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form [formGroup]="tourUpdateForm" (ngSubmit)="updateTour()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Tour</h5>
+          <button type="button" id="btnCloseUpdate" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="name_update" class="form-label">Tittle</label>
+            <input type="text" class="form-control" formControlName="title" id="name_update">
+          </div>
+          <div class="mb-3">
+            <label for="price_update" class="form-label">Price</label>
+            <input type="text" class="form-control" formControlName="price" id="price_update">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea type="text" class="form-control longtext" formControlName="description"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Modal delete-->
+<div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Delete Tour</h5>
+          <button type="button" id="btnCloseDelete" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Tour Title: {{tour?.title}}</p>
+          <p>Price: {{tour?.price}}</p>
+          <p>{{tour?.description}}</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger" (click)="deleteTour(tour?.id)">Delete</button>
+        </div>
+    </div>
+  </div>
+</div>
