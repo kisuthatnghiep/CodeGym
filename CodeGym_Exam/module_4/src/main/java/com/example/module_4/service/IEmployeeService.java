@@ -8,4 +8,5 @@ import java.util.List;
 public interface IEmployeeService extends IGeneralService<Employee> {
     List<Employee> findAllByBranch(Branch branch);
     List<Employee> sortByAge();
+    void render();
 }

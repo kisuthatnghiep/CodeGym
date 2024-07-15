@@ -85,4 +85,10 @@ public class EmployeeController {
         List<Employee> employees = employeeService.sortByAge();
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
+
+    @GetMapping("/render")
+    public ResponseEntity<String> render() {
+        employeeService.render();
+        return new ResponseEntity<>("Done!", HttpStatus.OK);
+    }
 }

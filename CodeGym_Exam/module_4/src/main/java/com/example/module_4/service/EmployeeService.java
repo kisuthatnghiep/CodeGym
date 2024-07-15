@@ -2,16 +2,24 @@ package com.example.module_4.service;
 
 import com.example.module_4.model.Branch;
 import com.example.module_4.model.Employee;
+import com.example.module_4.repository.IBranchRepository;
 import com.example.module_4.repository.IEmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
+
 @Service
 public class EmployeeService implements IEmployeeService {
+
     @Autowired
     private IEmployeeRepository employeeRepository;
+    @Autowired
+    private IBranchRepository branchRepository;
+
     @Override
     public Iterable<Employee> findAll() {
         return employeeRepository.findAll();
@@ -42,6 +50,7 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
+    @Cacheable(value = "employeeListBybranch", key = "#branch.id")
     public List<Employee> findAllByBranch(Branch branch) {
         return employeeRepository.findAllByBranch(branch);
     }
@@ -59,5 +68,19 @@ public class EmployeeService implements IEmployeeService {
             }
         }
         return true;
+    }
+
+    @Override
+    public void render() {
+        Random random = new Random();
+        for (int i = 0; i < 10000; i++) {
+            Employee employee = new Employee();
+            employee.setName("Javis " + i);
+            employee.setCode("MNV" + i);
+            employee.setAge(random.nextInt(40) + 20);
+            employee.setSalary(random.nextDouble() * 5000 + 3000);
+            employee.setBranch(branchRepository.findById((long) (random.nextInt(3) + 1)).orElse(null));
+            employeeRepository.save(employee);
+        }
     }
 }
